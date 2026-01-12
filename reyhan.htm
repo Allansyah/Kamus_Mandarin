@@ -1,0 +1,2356 @@
+<!DOCTYPE html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Kamus Lapangan Magang - Reyhan</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Crimson+Pro:wght@400;600;700&family=Noto+Sans+SC:wght@400;500;700&family=DM+Sans:wght@400;500;700&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      /* ===================================
+   KAMUS LAPANGAN MAGANG - CSS STYLING
+   Theme: Interactive Green with Enhanced Hero
+   =================================== */
+
+      /* CSS Variables for Green Theme */
+      :root {
+        --primary-green: #2d7a3e;
+        --secondary-green: #4caf50;
+        --light-green: #a8e6a1;
+        --dark-green: #1b5e20;
+        --accent-green: #66bb6a;
+        --bg-light: #f1f8f4;
+        --bg-white: #ffffff;
+        --text-dark: #1a1a1a;
+        --text-light: #666666;
+        --shadow: rgba(45, 122, 62, 0.1);
+        --shadow-hover: rgba(45, 122, 62, 0.2);
+      }
+
+      /* Reset & Base Styles */
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      body {
+        font-family: "DM Sans", -apple-system, BlinkMacSystemFont, "Segoe UI",
+          sans-serif;
+        line-height: 1.6;
+        color: var(--text-dark);
+        background-color: var(--bg-light);
+        overflow-x: hidden;
+      }
+
+      /* ===================================
+   HERO SECTION - ENHANCED WITH ANIMATIONS
+   =================================== */
+      .hero {
+        min-height: 100vh;
+        background: linear-gradient(
+          135deg,
+          var(--primary-green) 0%,
+          var(--dark-green) 100%
+        );
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        position: relative;
+        overflow: hidden;
+        color: white;
+        text-align: center;
+        padding: 2rem;
+      }
+
+      /* Animated Floating Circles Background */
+      .hero::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background: radial-gradient(
+            circle at 20% 30%,
+            rgba(168, 230, 161, 0.25) 0%,
+            transparent 40%
+          ),
+          radial-gradient(
+            circle at 80% 70%,
+            rgba(102, 187, 106, 0.2) 0%,
+            transparent 40%
+          ),
+          radial-gradient(
+            circle at 50% 50%,
+            rgba(76, 175, 80, 0.15) 0%,
+            transparent 50%
+          );
+        animation: float 15s ease-in-out infinite;
+      }
+
+      /* Rotating Pattern Overlay */
+      .hero::after {
+        content: "";
+        position: absolute;
+        top: -50%;
+        left: -50%;
+        width: 200%;
+        height: 200%;
+        background: repeating-linear-gradient(
+          45deg,
+          transparent,
+          transparent 20px,
+          rgba(168, 230, 161, 0.03) 20px,
+          rgba(168, 230, 161, 0.03) 40px
+        );
+        animation: rotate 60s linear infinite;
+        pointer-events: none;
+      }
+
+      /* Floating Animation */
+      @keyframes float {
+        0%,
+        100% {
+          transform: translate(0, 0) scale(1);
+          opacity: 0.5;
+        }
+        25% {
+          transform: translate(40px, -40px) scale(1.1);
+          opacity: 0.7;
+        }
+        50% {
+          transform: translate(-30px, 20px) scale(0.95);
+          opacity: 0.8;
+        }
+        75% {
+          transform: translate(20px, 40px) scale(1.05);
+          opacity: 0.6;
+        }
+      }
+
+      /* Rotation Animation */
+      @keyframes rotate {
+        0% {
+          transform: rotate(0deg);
+        }
+        100% {
+          transform: rotate(360deg);
+        }
+      }
+
+      /* Glowing Orbs */
+      .glow-orb {
+        position: absolute;
+        border-radius: 50%;
+        filter: blur(60px);
+        opacity: 0.4;
+        animation: pulse-glow 8s ease-in-out infinite;
+        pointer-events: none;
+      }
+
+      .glow-orb:nth-child(1) {
+        width: 300px;
+        height: 300px;
+        background: var(--accent-green);
+        top: 10%;
+        left: 15%;
+        animation-delay: 0s;
+      }
+
+      .glow-orb:nth-child(2) {
+        width: 250px;
+        height: 250px;
+        background: var(--secondary-green);
+        bottom: 15%;
+        right: 20%;
+        animation-delay: 3s;
+      }
+
+      .glow-orb:nth-child(3) {
+        width: 200px;
+        height: 200px;
+        background: var(--light-green);
+        top: 50%;
+        right: 10%;
+        animation-delay: 6s;
+      }
+
+      @keyframes pulse-glow {
+        0%,
+        100% {
+          transform: scale(1);
+          opacity: 0.3;
+        }
+        50% {
+          transform: scale(1.2);
+          opacity: 0.5;
+        }
+      }
+
+      /* Animated Particles */
+      .hero-particles {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        top: 0;
+        left: 0;
+        pointer-events: none;
+      }
+
+      .particle {
+        position: absolute;
+        background: rgba(255, 255, 255, 0.3);
+        border-radius: 50%;
+        animation: rise 15s infinite ease-in;
+      }
+
+      .particle:nth-child(1) {
+        width: 10px;
+        height: 10px;
+        left: 10%;
+        animation-delay: 0s;
+        animation-duration: 12s;
+      }
+
+      .particle:nth-child(2) {
+        width: 15px;
+        height: 15px;
+        left: 25%;
+        animation-delay: 2s;
+        animation-duration: 15s;
+      }
+
+      .particle:nth-child(3) {
+        width: 8px;
+        height: 8px;
+        left: 40%;
+        animation-delay: 4s;
+        animation-duration: 10s;
+      }
+
+      .particle:nth-child(4) {
+        width: 12px;
+        height: 12px;
+        left: 60%;
+        animation-delay: 1s;
+        animation-duration: 13s;
+      }
+
+      .particle:nth-child(5) {
+        width: 14px;
+        height: 14px;
+        left: 75%;
+        animation-delay: 3s;
+        animation-duration: 14s;
+      }
+
+      .particle:nth-child(6) {
+        width: 9px;
+        height: 9px;
+        left: 90%;
+        animation-delay: 5s;
+        animation-duration: 11s;
+      }
+
+      @keyframes rise {
+        0% {
+          bottom: -100px;
+          opacity: 0;
+          transform: translateX(0) rotate(0deg);
+        }
+        10% {
+          opacity: 1;
+        }
+        90% {
+          opacity: 1;
+        }
+        100% {
+          bottom: 110vh;
+          opacity: 0;
+          transform: translateX(100px) rotate(360deg);
+        }
+      }
+
+      .hero-content {
+        position: relative;
+        z-index: 2;
+        max-width: 800px;
+        animation: fadeInUp 1s ease-out;
+      }
+
+      @keyframes fadeInUp {
+        from {
+          opacity: 0;
+          transform: translateY(30px);
+        }
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+
+      .hero-badge {
+        display: inline-block;
+        background: rgba(255, 255, 255, 0.2);
+        backdrop-filter: blur(10px);
+        padding: 0.5rem 1.5rem;
+        border-radius: 50px;
+        font-size: 0.9rem;
+        font-weight: 500;
+        margin-bottom: 1.5rem;
+        border: 1px solid rgba(255, 255, 255, 0.3);
+        animation: slideInDown 0.8s ease-out 0.2s both;
+      }
+
+      @keyframes slideInDown {
+        from {
+          opacity: 0;
+          transform: translateY(-20px);
+        }
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+
+      .hero h1 {
+        font-family: "Crimson Pro", serif;
+        font-size: clamp(2rem, 5vw, 4rem);
+        font-weight: 700;
+        margin-bottom: 1rem;
+        letter-spacing: 2px;
+        animation: slideInDown 0.8s ease-out 0.4s both;
+        text-shadow: 0 2px 20px rgba(0, 0, 0, 0.2);
+      }
+
+      .hero-mandarin {
+        font-family: "Noto Sans SC", sans-serif;
+        font-size: clamp(1.2rem, 3vw, 2rem);
+        font-weight: 500;
+        margin-bottom: 1rem;
+        opacity: 0.9;
+        animation: slideInDown 0.8s ease-out 0.6s both;
+        text-shadow: 0 2px 15px rgba(0, 0, 0, 0.2);
+      }
+
+      .hero-info {
+        font-size: 1.1rem;
+        opacity: 0.85;
+        animation: slideInDown 0.8s ease-out 0.8s both;
+      }
+
+      /* Scroll Indicator */
+      .scroll-indicator {
+        position: absolute;
+        bottom: 2rem;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 30px;
+        height: 50px;
+        border: 2px solid rgba(255, 255, 255, 0.5);
+        border-radius: 25px;
+        z-index: 3;
+        animation: bounce 2s infinite;
+      }
+
+      .scroll-indicator::before {
+        content: "";
+        position: absolute;
+        top: 8px;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 6px;
+        height: 6px;
+        background: white;
+        border-radius: 50%;
+        animation: scroll 2s infinite;
+      }
+
+      @keyframes bounce {
+        0%,
+        100% {
+          transform: translateX(-50%) translateY(0);
+        }
+        50% {
+          transform: translateX(-50%) translateY(10px);
+        }
+      }
+
+      @keyframes scroll {
+        0% {
+          opacity: 1;
+          transform: translateX(-50%) translateY(0);
+        }
+        100% {
+          opacity: 0;
+          transform: translateX(-50%) translateY(20px);
+        }
+      }
+
+      /* ===================================
+   VOCABULARY SECTION
+   =================================== */
+      .vocab-section {
+        padding: 5rem 2rem;
+        background: var(--bg-light);
+      }
+
+      .container {
+        max-width: 1400px;
+        margin: 0 auto;
+      }
+
+      .section-header {
+        text-align: center;
+        margin-bottom: 4rem;
+        animation: fadeIn 1s ease-out;
+      }
+
+      @keyframes fadeIn {
+        from {
+          opacity: 0;
+        }
+        to {
+          opacity: 1;
+        }
+      }
+
+      .section-title {
+        font-family: "Crimson Pro", serif;
+        font-size: clamp(2rem, 4vw, 3rem);
+        color: var(--primary-green);
+        margin-bottom: 1rem;
+        position: relative;
+        display: inline-block;
+      }
+
+      .section-title::after {
+        content: "";
+        position: absolute;
+        bottom: -10px;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 100px;
+        height: 4px;
+        background: linear-gradient(
+          90deg,
+          var(--secondary-green),
+          var(--accent-green)
+        );
+        border-radius: 2px;
+      }
+
+      /* Category Header */
+      .category-header {
+        margin: 4rem 0 2rem;
+        animation: slideIn 0.6s ease-out;
+      }
+
+      @keyframes slideIn {
+        from {
+          opacity: 0;
+          transform: translateX(-30px);
+        }
+        to {
+          opacity: 1;
+          transform: translateX(0);
+        }
+      }
+
+      .category-header h3 {
+        font-size: clamp(1.5rem, 3vw, 2rem);
+        color: var(--primary-green);
+        display: flex;
+        align-items: center;
+        gap: 1rem;
+        padding: 1rem 1.5rem;
+        background: white;
+        border-radius: 15px;
+        box-shadow: 0 4px 15px var(--shadow);
+        transition: all 0.3s ease;
+      }
+
+      .category-header h3:hover {
+        transform: translateX(10px);
+        box-shadow: 0 6px 20px var(--shadow-hover);
+      }
+
+      .category-icon {
+        font-size: 2rem;
+        animation: rotate-icon 3s ease-in-out infinite;
+      }
+
+      @keyframes rotate-icon {
+        0%,
+        100% {
+          transform: rotate(0deg);
+        }
+        25% {
+          transform: rotate(-10deg);
+        }
+        75% {
+          transform: rotate(10deg);
+        }
+      }
+
+      /* Vocabulary Grid */
+      .vocab-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+        gap: 2rem;
+        margin-bottom: 3rem;
+      }
+
+      /* Vocabulary Card */
+      .vocab-card {
+        background: white;
+        border-radius: 20px;
+        padding: 2rem;
+        box-shadow: 0 4px 15px var(--shadow);
+        transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+        position: relative;
+        overflow: hidden;
+        animation: fadeInUp 0.6s ease-out both;
+        animation-delay: calc(var(--card-index, 0) * 0.05s);
+      }
+
+      .vocab-card::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 5px;
+        background: linear-gradient(
+          90deg,
+          var(--secondary-green),
+          var(--accent-green)
+        );
+        transform: scaleX(0);
+        transform-origin: left;
+        transition: transform 0.4s ease;
+      }
+
+      .vocab-card:hover::before {
+        transform: scaleX(1);
+      }
+
+      .vocab-card:hover {
+        transform: translateY(-10px) scale(1.02);
+        box-shadow: 0 15px 35px var(--shadow-hover);
+      }
+
+      /* Add stagger effect to cards */
+      .vocab-card:nth-child(1) {
+        --card-index: 1;
+      }
+      .vocab-card:nth-child(2) {
+        --card-index: 2;
+      }
+      .vocab-card:nth-child(3) {
+        --card-index: 3;
+      }
+      .vocab-card:nth-child(4) {
+        --card-index: 4;
+      }
+      .vocab-card:nth-child(5) {
+        --card-index: 5;
+      }
+      .vocab-card:nth-child(6) {
+        --card-index: 6;
+      }
+      .vocab-card:nth-child(7) {
+        --card-index: 7;
+      }
+      .vocab-card:nth-child(8) {
+        --card-index: 8;
+      }
+
+      /* Vocabulary Header */
+      .vocab-header {
+        margin-bottom: 1.5rem;
+        padding-bottom: 1.5rem;
+        border-bottom: 2px solid var(--bg-light);
+      }
+
+      .vocab-mandarin {
+        font-family: "Noto Sans SC", sans-serif;
+        font-size: 2rem;
+        font-weight: 700;
+        color: var(--primary-green);
+        margin-bottom: 0.5rem;
+        transition: color 0.3s ease;
+      }
+
+      .vocab-card:hover .vocab-mandarin {
+        color: var(--secondary-green);
+      }
+
+      .vocab-pinyin {
+        font-size: 1.1rem;
+        color: var(--accent-green);
+        font-style: italic;
+        margin-bottom: 0.5rem;
+      }
+
+      .vocab-meaning {
+        font-size: 1rem;
+        color: var(--text-light);
+        font-weight: 500;
+      }
+
+      /* Vocabulary Example */
+      .vocab-example {
+        background: linear-gradient(
+          135deg,
+          var(--bg-light) 0%,
+          rgba(168, 230, 161, 0.1) 100%
+        );
+        padding: 1.5rem;
+        border-radius: 12px;
+        transition: all 0.3s ease;
+      }
+
+      .vocab-card:hover .vocab-example {
+        background: linear-gradient(
+          135deg,
+          rgba(168, 230, 161, 0.2) 0%,
+          rgba(168, 230, 161, 0.3) 100%
+        );
+      }
+
+      .example-label {
+        font-size: 0.85rem;
+        font-weight: 600;
+        color: var(--primary-green);
+        margin-bottom: 0.8rem;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+      }
+
+      .example-mandarin {
+        font-family: "Noto Sans SC", sans-serif;
+        font-size: 1.1rem;
+        color: var(--text-dark);
+        margin-bottom: 0.5rem;
+        line-height: 1.8;
+      }
+
+      .example-pinyin {
+        font-size: 0.95rem;
+        color: var(--text-light);
+        font-style: italic;
+        margin-bottom: 0.5rem;
+      }
+
+      .example-translation {
+        font-size: 0.95rem;
+        color: var(--text-dark);
+        padding-top: 0.8rem;
+        border-top: 1px solid rgba(45, 122, 62, 0.2);
+      }
+
+      /* ===================================
+   GALLERY SECTION
+   =================================== */
+      .gallery-section {
+        padding: 5rem 2rem;
+        background: white;
+      }
+
+      .gallery-grid {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 2rem;
+        margin-top: 3rem;
+      }
+
+      .gallery-item {
+        border-radius: 20px;
+        overflow: hidden;
+        aspect-ratio: 4/3;
+        box-shadow: 0 4px 15px var(--shadow);
+        transition: all 0.4s ease;
+        animation: fadeInUp 0.6s ease-out both;
+      }
+
+      .gallery-item:hover {
+        transform: scale(1.05);
+        box-shadow: 0 15px 35px var(--shadow-hover);
+      }
+
+      .gallery-item img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        transition: transform 0.6s ease;
+      }
+
+      .gallery-item:hover img {
+        transform: scale(1.1);
+      }
+
+      .gallery-placeholder {
+        width: 100%;
+        height: 100%;
+        background: linear-gradient(
+          135deg,
+          var(--light-green) 0%,
+          var(--accent-green) 100%
+        );
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        color: white;
+      }
+
+      .gallery-placeholder-icon {
+        font-size: 4rem;
+        margin-bottom: 1rem;
+        animation: bounce 2s infinite;
+      }
+
+      .gallery-placeholder-text {
+        font-size: 1.2rem;
+        font-weight: 500;
+      }
+
+      /* ===================================
+   FOOTER
+   =================================== */
+      .footer {
+        background: linear-gradient(
+          135deg,
+          var(--dark-green) 0%,
+          var(--primary-green) 100%
+        );
+        color: white;
+        padding: 3rem 2rem;
+        text-align: center;
+      }
+
+      .footer-content h3 {
+        font-family: "Crimson Pro", serif;
+        font-size: 2rem;
+        margin-bottom: 1rem;
+        letter-spacing: 2px;
+      }
+
+      .footer-content p {
+        font-size: 1rem;
+        opacity: 0.9;
+        margin-bottom: 0.5rem;
+      }
+
+      .footer-id {
+        color: var(--light-green);
+        font-weight: 600;
+        margin-top: 1rem;
+        font-size: 1.1rem;
+      }
+
+      /* ===================================
+   RESPONSIVE DESIGN
+   =================================== */
+      @media (max-width: 768px) {
+        .vocab-grid {
+          grid-template-columns: 1fr;
+          gap: 1.5rem;
+        }
+
+        .gallery-grid {
+          grid-template-columns: 1fr;
+          gap: 1.5rem;
+        }
+
+        .category-header h3 {
+          flex-direction: column;
+          text-align: center;
+        }
+
+        .hero {
+          padding: 1rem;
+        }
+
+        .vocab-section {
+          padding: 3rem 1rem;
+        }
+
+        .gallery-section {
+          padding: 3rem 1rem;
+        }
+
+        .glow-orb {
+          display: none;
+        }
+      }
+
+      @media (max-width: 480px) {
+        .vocab-card {
+          padding: 1.5rem;
+        }
+
+        .vocab-mandarin {
+          font-size: 1.5rem;
+        }
+
+        .hero h1 {
+          font-size: 1.8rem;
+        }
+
+        .hero-mandarin {
+          font-size: 1.2rem;
+        }
+      }
+
+      /* ===================================
+   SCROLL ANIMATIONS
+   =================================== */
+      @media (prefers-reduced-motion: no-preference) {
+        .vocab-card,
+        .gallery-item,
+        .category-header {
+          opacity: 0;
+          animation: fadeInUp 0.6s ease-out forwards;
+        }
+      }
+
+      /* ===================================
+   LOADING ANIMATION
+   =================================== */
+      @keyframes shimmer {
+        0% {
+          background-position: -1000px 0;
+        }
+        100% {
+          background-position: 1000px 0;
+        }
+      }
+
+      .loading {
+        animation: shimmer 2s infinite;
+        background: linear-gradient(
+          to right,
+          var(--bg-light) 8%,
+          var(--light-green) 18%,
+          var(--bg-light) 33%
+        );
+        background-size: 1000px 100%;
+      }
+
+      /* ===================================
+   UTILITY CLASSES
+   =================================== */
+      .text-green {
+        color: var(--primary-green);
+      }
+
+      .bg-green {
+        background-color: var(--secondary-green);
+      }
+
+      .shadow-green {
+        box-shadow: 0 4px 15px var(--shadow);
+      }
+
+      /* Print Styles */
+      @media print {
+        .hero,
+        .gallery-section,
+        .scroll-indicator {
+          display: none;
+        }
+
+        .vocab-card {
+          break-inside: avoid;
+          box-shadow: none;
+          border: 1px solid #ddd;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <!-- 
+    <footer class="footer">
+      <div class="footer-content">
+        <h3>REYHAN EKAPRANA TARIGAN</h3>
+        <p>Pendidikan Bahasa Mandarin</p>
+        <p>Angkatan 2023 I</p>
+        <p class="footer-id">NIM: 23020774111</p>
+      </div>
+    </footer>
+    -->
+    <!-- Hero Section -->
+    <section class="hero">
+      <div class="hero-content">
+        <div class="hero-badge">
+          Kamus Lapangan Magang — Purchasing, PR, R&D & Mesin
+        </div>
+        <h1>REYHAN EKAPRANA TARIGAN</h1>
+        <div class="hero-mandarin">实习手册：采购、公关、研发与设备词典</div>
+        <div class="hero-mandarin">
+          Shíxí shǒucè: Cǎigòu, gōngguān, yánfā yǔ shèbèi cídiǎn
+        </div>
+        <div class="hero-info">
+          Pendidikan Bahasa Mandarin • Angkatan 2023 I
+        </div>
+        <p class="footer-id" style="color: var(--accent); margin-top: 1rem">
+          23020774111
+        </p>
+      </div>
+      <div class="scroll-indicator"></div>
+    </section>
+
+    <!-- Vocabulary Section -->
+    <section class="vocab-section">
+      <div class="container">
+        <div class="section-header">
+          <h2 class="section-title">Kamus Kosakata</h2>
+        </div>
+
+        <!-- Pengadaan (Procurement) -->
+        <div class="category-header">
+          <h3>
+            <span class="category-icon">📦</span>
+            Pengadaan & Pembelian (采购)
+          </h3>
+        </div>
+        <div class="vocab-grid">
+          <div class="vocab-card">
+            <div class="vocab-header">
+              <div class="vocab-mandarin">采购</div>
+              <div class="vocab-pinyin">cǎigòu</div>
+              <div class="vocab-meaning">pembelian / procurement</div>
+            </div>
+            <div class="vocab-example">
+              <div class="example-label">示例 (Contoh):</div>
+              <div class="example-mandarin">我们需要尽快完成这次采购。</div>
+              <div class="example-pinyin">
+                Wǒmen xūyào jǐnkuài wánchéng zhè cì cǎigòu.
+              </div>
+              <div class="example-translation">
+                Kita perlu segera menyelesaikan pembelian ini.
+              </div>
+            </div>
+          </div>
+
+          <div class="vocab-card">
+            <div class="vocab-header">
+              <div class="vocab-mandarin">供应商</div>
+              <div class="vocab-pinyin">gōngyìngshāng</div>
+              <div class="vocab-meaning">pemasok / supplier</div>
+            </div>
+            <div class="vocab-example">
+              <div class="example-label">示例 (Contoh):</div>
+              <div class="example-mandarin">请把新供应商的资料发给我。</div>
+              <div class="example-pinyin">
+                Qǐng bǎ xīn gōngyìngshāng de zīliào fā gěi wǒ.
+              </div>
+              <div class="example-translation">
+                Tolong kirimkan data pemasok baru kepada saya.
+              </div>
+            </div>
+          </div>
+
+          <div class="vocab-card">
+            <div class="vocab-header">
+              <div class="vocab-mandarin">合同</div>
+              <div class="vocab-pinyin">hétong</div>
+              <div class="vocab-meaning">kontrak / agreement</div>
+            </div>
+            <div class="vocab-example">
+              <div class="example-label">示例 (Contoh):</div>
+              <div class="example-mandarin">合同已经由法务部门审核通过。</div>
+              <div class="example-pinyin">
+                Hétong yǐjīng yóu fǎwù bùmén shěnhé tōngguò.
+              </div>
+              <div class="example-translation">
+                Kontrak sudah disetujui oleh bagian hukum.
+              </div>
+            </div>
+          </div>
+
+          <div class="vocab-card">
+            <div class="vocab-header">
+              <div class="vocab-mandarin">报价</div>
+              <div class="vocab-pinyin">bàojià</div>
+              <div class="vocab-meaning">penawaran harga / quotation</div>
+            </div>
+            <div class="vocab-example">
+              <div class="example-label">示例 (Contoh):</div>
+              <div class="example-mandarin">请在周五之前给我们正式报价。</div>
+              <div class="example-pinyin">
+                Qǐng zài zhōu wǔ zhīqián gěi wǒmen zhèngshì bàojià.
+              </div>
+              <div class="example-translation">
+                Tolong kirimkan penawaran harga resmi sebelum Jumat.
+              </div>
+            </div>
+          </div>
+
+          <div class="vocab-card">
+            <div class="vocab-header">
+              <div class="vocab-mandarin">订单</div>
+              <div class="vocab-pinyin">dìngdān</div>
+              <div class="vocab-meaning">pesanan / order</div>
+            </div>
+            <div class="vocab-example">
+              <div class="example-label">示例 (Contoh):</div>
+              <div class="example-mandarin">这个订单预计下个月发货。</div>
+              <div class="example-pinyin">
+                Zhège dìngdān yùjì xià gè yuè fāhuò.
+              </div>
+              <div class="example-translation">
+                Pesanan ini direncanakan dikirim bulan depan.
+              </div>
+            </div>
+          </div>
+
+          <div class="vocab-card">
+            <div class="vocab-header">
+              <div class="vocab-mandarin">交货</div>
+              <div class="vocab-pinyin">jiāohuò</div>
+              <div class="vocab-meaning">pengiriman barang / delivery</div>
+            </div>
+            <div class="vocab-example">
+              <div class="example-label">示例 (Contoh):</div>
+              <div class="example-mandarin">交货日期可以再商量吗？</div>
+              <div class="example-pinyin">
+                Jiāohuò rìqī kěyǐ zài shāngliáng ma?
+              </div>
+              <div class="example-translation">
+                Tanggal pengiriman bisa dinegosiasikan lagi?
+              </div>
+            </div>
+          </div>
+
+          <div class="vocab-card">
+            <div class="vocab-header">
+              <div class="vocab-mandarin">交货期</div>
+              <div class="vocab-pinyin">jiāohuòqī</div>
+              <div class="vocab-meaning">waktu pengiriman / lead time</div>
+            </div>
+            <div class="vocab-example">
+              <div class="example-label">示例 (Contoh):</div>
+              <div class="example-mandarin">供应商的交货期是四周。</div>
+              <div class="example-pinyin">
+                Gōngyìngshāng de jiāohuòqī shì sì zhōu.
+              </div>
+              <div class="example-translation">
+                Lead time pemasok adalah empat minggu.
+              </div>
+            </div>
+          </div>
+
+          <div class="vocab-card">
+            <div class="vocab-header">
+              <div class="vocab-mandarin">采购订单</div>
+              <div class="vocab-pinyin">cǎigòu dìngdān</div>
+              <div class="vocab-meaning">purchase order (PO)</div>
+            </div>
+            <div class="vocab-example">
+              <div class="example-label">示例 (Contoh):</div>
+              <div class="example-mandarin">请确认采购订单上的数量。</div>
+              <div class="example-pinyin">
+                Qǐng quèrèn cǎigòu dìngdān shàng de shùliàng.
+              </div>
+              <div class="example-translation">
+                Tolong konfirmasi jumlah pada purchase order.
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- International Trade -->
+        <div class="category-header">
+          <h3>
+            <span class="category-icon">🌏</span>
+            Perdagangan Internasional (国际贸易)
+          </h3>
+        </div>
+        <div class="vocab-grid">
+          <div class="vocab-card">
+            <div class="vocab-header">
+              <div class="vocab-mandarin">国际</div>
+              <div class="vocab-pinyin">guójì</div>
+              <div class="vocab-meaning">internasional</div>
+            </div>
+            <div class="vocab-example">
+              <div class="example-label">示例 (Contoh):</div>
+              <div class="example-mandarin">我们需要处理国际运输的手续。</div>
+              <div class="example-pinyin">
+                Wǒmen xūyào chǔlǐ guójì yùnshū de shǒuxù.
+              </div>
+              <div class="example-translation">
+                Kita perlu mengurus prosedur pengiriman internasional.
+              </div>
+            </div>
+          </div>
+
+          <div class="vocab-card">
+            <div class="vocab-header">
+              <div class="vocab-mandarin">贸易</div>
+              <div class="vocab-pinyin">màoyì</div>
+              <div class="vocab-meaning">perdagangan / trade</div>
+            </div>
+            <div class="vocab-example">
+              <div class="example-label">示例 (Contoh):</div>
+              <div class="example-mandarin">公司正在开拓新的国际贸易市场。</div>
+              <div class="example-pinyin">
+                Gōngsī zhèngzài kāituò xīn de guójì màoyì shìchǎng.
+              </div>
+              <div class="example-translation">
+                Perusahaan sedang mengembangkan pasar perdagangan internasional
+                baru.
+              </div>
+            </div>
+          </div>
+
+          <div class="vocab-card">
+            <div class="vocab-header">
+              <div class="vocab-mandarin">进口</div>
+              <div class="vocab-pinyin">jìnkǒu</div>
+              <div class="vocab-meaning">impor / import</div>
+            </div>
+            <div class="vocab-example">
+              <div class="example-label">示例 (Contoh):</div>
+              <div class="example-mandarin">这些零件是从德国进口的。</div>
+              <div class="example-pinyin">
+                Zhèxiē língjiàn shì cóng Déguó jìnkǒu de.
+              </div>
+              <div class="example-translation">
+                Komponen-komponen ini diimpor dari Jerman.
+              </div>
+            </div>
+          </div>
+
+          <div class="vocab-card">
+            <div class="vocab-header">
+              <div class="vocab-mandarin">出口</div>
+              <div class="vocab-pinyin">chūkǒu</div>
+              <div class="vocab-meaning">ekspor / export</div>
+            </div>
+            <div class="vocab-example">
+              <div class="example-label">示例 (Contoh):</div>
+              <div class="example-mandarin">出口文件需要在装运前准备好。</div>
+              <div class="example-pinyin">
+                Chūkǒu wénjiàn xūyào zài zhuāngyùn qián zhǔnbèi hǎo.
+              </div>
+              <div class="example-translation">
+                Dokumen ekspor harus disiapkan sebelum pengapalan.
+              </div>
+            </div>
+          </div>
+
+          <div class="vocab-card">
+            <div class="vocab-header">
+              <div class="vocab-mandarin">报关</div>
+              <div class="vocab-pinyin">bàoguān</div>
+              <div class="vocab-meaning">
+                proses pabean / customs declaration
+              </div>
+            </div>
+            <div class="vocab-example">
+              <div class="example-label">示例 (Contoh):</div>
+              <div class="example-mandarin">报关手续由我们的货代负责。</div>
+              <div class="example-pinyin">
+                Bàoguān shǒuxù yóu wǒmen de huòdài fùzé.
+              </div>
+              <div class="example-translation">
+                Proses pabean ditangani oleh forwarder kita.
+              </div>
+            </div>
+          </div>
+
+          <div class="vocab-card">
+            <div class="vocab-header">
+              <div class="vocab-mandarin">运输</div>
+              <div class="vocab-pinyin">yùnshū</div>
+              <div class="vocab-meaning">transportasi / shipping</div>
+            </div>
+            <div class="vocab-example">
+              <div class="example-label">示例 (Contoh):</div>
+              <div class="example-mandarin">运输成本已经计入报价。</div>
+              <div class="example-pinyin">
+                Yùnshū chéngběn yǐjīng jìrù bàojià.
+              </div>
+              <div class="example-translation">
+                Biaya pengiriman sudah dimasukkan ke dalam penawaran.
+              </div>
+            </div>
+          </div>
+
+          <div class="vocab-card">
+            <div class="vocab-header">
+              <div class="vocab-mandarin">船运</div>
+              <div class="vocab-pinyin">chuányùn</div>
+              <div class="vocab-meaning">pengiriman laut / sea freight</div>
+            </div>
+            <div class="vocab-example">
+              <div class="example-label">示例 (Contoh):</div>
+              <div class="example-mandarin">
+                这批货安排了船运，预计两周到达。
+              </div>
+              <div class="example-pinyin">
+                Zhè pī huò ānpái le chuányùn, yùjì liǎng zhōu dàodá.
+              </div>
+              <div class="example-translation">
+                Kargo ini dikirim lewat laut, diperkirakan tiba dalam dua
+                minggu.
+              </div>
+            </div>
+          </div>
+
+          <div class="vocab-card">
+            <div class="vocab-header">
+              <div class="vocab-mandarin">空运</div>
+              <div class="vocab-pinyin">kōngyùn</div>
+              <div class="vocab-meaning">pengiriman udara / air freight</div>
+            </div>
+            <div class="vocab-example">
+              <div class="example-label">示例 (Contoh):</div>
+              <div class="example-mandarin">若急需，可选择空运。</div>
+              <div class="example-pinyin">Ruò jíxū, kě xuǎnzé kōngyùn.</div>
+              <div class="example-translation">
+                Jika sangat urgent, dapat memilih pengiriman udara.
+              </div>
+            </div>
+          </div>
+
+          <div class="vocab-card">
+            <div class="vocab-header">
+              <div class="vocab-mandarin">付款</div>
+              <div class="vocab-pinyin">fùkuǎn</div>
+              <div class="vocab-meaning">pembayaran / payment</div>
+            </div>
+            <div class="vocab-example">
+              <div class="example-label">示例 (Contoh):</div>
+              <div class="example-mandarin">请在发票日期后30天内完成付款。</div>
+              <div class="example-pinyin">
+                Qǐng zài fāpiào rìqī hòu sānshí tiān nèi wánchéng fùkuǎn.
+              </div>
+              <div class="example-translation">
+                Silakan selesaikan pembayaran dalam 30 hari sejak tanggal
+                faktur.
+              </div>
+            </div>
+          </div>
+
+          <div class="vocab-card">
+            <div class="vocab-header">
+              <div class="vocab-mandarin">发票</div>
+              <div class="vocab-pinyin">fāpiào</div>
+              <div class="vocab-meaning">faktur / invoice</div>
+            </div>
+            <div class="vocab-example">
+              <div class="example-label">示例 (Contoh):</div>
+              <div class="example-mandarin">请把发票和装箱单一起寄来。</div>
+              <div class="example-pinyin">
+                Qǐng bǎ fāpiào hé zhuāngxiāng dān yīqǐ jì lái.
+              </div>
+              <div class="example-translation">
+                Tolong kirimkan faktur beserta packing list.
+              </div>
+            </div>
+          </div>
+
+          <div class="vocab-card">
+            <div class="vocab-header">
+              <div class="vocab-mandarin">质检</div>
+              <div class="vocab-pinyin">zhìjiǎn</div>
+              <div class="vocab-meaning">inspeksi kualitas / QC inspection</div>
+            </div>
+            <div class="vocab-example">
+              <div class="example-label">示例 (Contoh):</div>
+              <div class="example-mandarin">质检报告显示产品全部合格。</div>
+              <div class="example-pinyin">
+                Zhìjiǎn bàogào xiǎnshì chǎnpǐn quánbù hégé.
+              </div>
+              <div class="example-translation">
+                Laporan QC menunjukkan semua produk memenuhi standar.
+              </div>
+            </div>
+          </div>
+
+          <div class="vocab-card">
+            <div class="vocab-header">
+              <div class="vocab-mandarin">质量保证</div>
+              <div class="vocab-pinyin">zhìliàng bǎozhèng</div>
+              <div class="vocab-meaning">jaminan kualitas / QA</div>
+            </div>
+            <div class="vocab-example">
+              <div class="example-label">示例 (Contoh):</div>
+              <div class="example-mandarin">我们提供为期一年的质量保证。</div>
+              <div class="example-pinyin">
+                Wǒmen tígōng wéiqī yì nián de zhìliàng bǎozhèng.
+              </div>
+              <div class="example-translation">
+                Kami memberikan jaminan kualitas selama satu tahun.
+              </div>
+            </div>
+          </div>
+
+          <div class="vocab-card">
+            <div class="vocab-header">
+              <div class="vocab-mandarin">售后服务</div>
+              <div class="vocab-pinyin">shòuhòu fúwù</div>
+              <div class="vocab-meaning">
+                layanan purna jual / after-sales service
+              </div>
+            </div>
+            <div class="vocab-example">
+              <div class="example-label">示例 (Contoh):</div>
+              <div class="example-mandarin">出现问题请联系售后服务中心。</div>
+              <div class="example-pinyin">
+                Chūxiàn wèntí qǐng liánxì shòuhòu fúwù zhōngxīn.
+              </div>
+              <div class="example-translation">
+                Jika ada masalah, silakan hubungi pusat layanan purna jual.
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Public Relations -->
+        <div class="category-header">
+          <h3>
+            <span class="category-icon">🤝</span>
+            Hubungan Masyarakat (公共关系)
+          </h3>
+        </div>
+        <div class="vocab-grid">
+          <div class="vocab-card">
+            <div class="vocab-header">
+              <div class="vocab-mandarin">公共关系</div>
+              <div class="vocab-pinyin">gōnggòng guānxì</div>
+              <div class="vocab-meaning">
+                hubungan masyarakat / public relations
+              </div>
+            </div>
+            <div class="vocab-example">
+              <div class="example-label">示例 (Contoh):</div>
+              <div class="example-mandarin">公共关系部门负责公司形象。</div>
+              <div class="example-pinyin">
+                Gōnggòng guānxì bùmén fùzé gōngsī xíngxiàng.
+              </div>
+              <div class="example-translation">
+                Departemen PR bertanggung jawab atas citra perusahaan.
+              </div>
+            </div>
+          </div>
+
+          <div class="vocab-card">
+            <div class="vocab-header">
+              <div class="vocab-mandarin">宣传</div>
+              <div class="vocab-pinyin">xuānchuán</div>
+              <div class="vocab-meaning">promosi / publicity</div>
+            </div>
+            <div class="vocab-example">
+              <div class="example-label">示例 (Contoh):</div>
+              <div class="example-mandarin">我们需要做更多的线上宣传。</div>
+              <div class="example-pinyin">
+                Wǒmen xūyào zuò gèng duō de xiànshàng xuānchuán.
+              </div>
+              <div class="example-translation">
+                Kita perlu melakukan promosi online lebih banyak.
+              </div>
+            </div>
+          </div>
+
+          <div class="vocab-card">
+            <div class="vocab-header">
+              <div class="vocab-mandarin">媒体</div>
+              <div class="vocab-pinyin">méitǐ</div>
+              <div class="vocab-meaning">media</div>
+            </div>
+            <div class="vocab-example">
+              <div class="example-label">示例 (Contoh):</div>
+              <div class="example-mandarin">媒体对新产品进行了报道。</div>
+              <div class="example-pinyin">
+                Méitǐ duì xīn chǎnpǐn jìnxíng le bàodào.
+              </div>
+              <div class="example-translation">
+                Media melaporkan tentang produk baru tersebut.
+              </div>
+            </div>
+          </div>
+
+          <div class="vocab-card">
+            <div class="vocab-header">
+              <div class="vocab-mandarin">新闻稿</div>
+              <div class="vocab-pinyin">xīnwén gǎo</div>
+              <div class="vocab-meaning">siaran pers / press release</div>
+            </div>
+            <div class="vocab-example">
+              <div class="example-label">示例 (Contoh):</div>
+              <div class="example-mandarin">请在发布前审核新闻稿。</div>
+              <div class="example-pinyin">
+                Qǐng zài fābù qián shěnhé xīnwén gǎo.
+              </div>
+              <div class="example-translation">
+                Tolong tinjau siaran pers sebelum dipublikasikan.
+              </div>
+            </div>
+          </div>
+
+          <div class="vocab-card">
+            <div class="vocab-header">
+              <div class="vocab-mandarin">品牌</div>
+              <div class="vocab-pinyin">pǐnpái</div>
+              <div class="vocab-meaning">merek / brand</div>
+            </div>
+            <div class="vocab-example">
+              <div class="example-label">示例 (Contoh):</div>
+              <div class="example-mandarin">我们希望提升品牌知名度。</div>
+              <div class="example-pinyin">
+                Wǒmen xīwàng tíshēng pǐnpái zhīmíngdù.
+              </div>
+              <div class="example-translation">
+                Kita ingin meningkatkan kesadaran merek.
+              </div>
+            </div>
+          </div>
+
+          <div class="vocab-card">
+            <div class="vocab-header">
+              <div class="vocab-mandarin">客户</div>
+              <div class="vocab-pinyin">kèhù</div>
+              <div class="vocab-meaning">pelanggan / client</div>
+            </div>
+            <div class="vocab-example">
+              <div class="example-label">示例 (Contoh):</div>
+              <div class="example-mandarin">客户对产品性能很满意。</div>
+              <div class="example-pinyin">
+                Kèhù duì chǎnpǐn xìngnéng hěn mǎnyì.
+              </div>
+              <div class="example-translation">
+                Pelanggan sangat puas dengan performa produk.
+              </div>
+            </div>
+          </div>
+
+          <div class="vocab-card">
+            <div class="vocab-header">
+              <div class="vocab-mandarin">协议</div>
+              <div class="vocab-pinyin">xiéyì</div>
+              <div class="vocab-meaning">perjanjian / agreement</div>
+            </div>
+            <div class="vocab-example">
+              <div class="example-label">示例 (Contoh):</div>
+              <div class="example-mandarin">双方已经签署合作协议。</div>
+              <div class="example-pinyin">
+                Shuāngfāng yǐjīng qiānshǔ hézuò xiéyì.
+              </div>
+              <div class="example-translation">
+                Kedua pihak telah menandatangani perjanjian kerja sama.
+              </div>
+            </div>
+          </div>
+
+          <div class="vocab-card">
+            <div class="vocab-header">
+              <div class="vocab-mandarin">报告</div>
+              <div class="vocab-pinyin">bàogào</div>
+              <div class="vocab-meaning">laporan / report</div>
+            </div>
+            <div class="vocab-example">
+              <div class="example-label">示例 (Contoh):</div>
+              <div class="example-mandarin">请在周一提交周报报告。</div>
+              <div class="example-pinyin">
+                Qǐng zài zhōu yī tíjiāo zhōubào bàogào.
+              </div>
+              <div class="example-translation">
+                Tolong serahkan laporan mingguan pada hari Senin.
+              </div>
+            </div>
+          </div>
+
+          <div class="vocab-card">
+            <div class="vocab-header">
+              <div class="vocab-mandarin">会议</div>
+              <div class="vocab-pinyin">huìyì</div>
+              <div class="vocab-meaning">rapat / meeting</div>
+            </div>
+            <div class="vocab-example">
+              <div class="example-label">示例 (Contoh):</div>
+              <div class="example-mandarin">我们下午三点有一个项目会议。</div>
+              <div class="example-pinyin">
+                Wǒmen xiàwǔ sān diǎn yǒu yīgè xiàngmù huìyì.
+              </div>
+              <div class="example-translation">
+                Kita ada rapat proyek jam 3 sore.
+              </div>
+            </div>
+          </div>
+
+          <div class="vocab-card">
+            <div class="vocab-header">
+              <div class="vocab-mandarin">协调</div>
+              <div class="vocab-pinyin">xiétiáo</div>
+              <div class="vocab-meaning">koordinasi / coordinate</div>
+            </div>
+            <div class="vocab-example">
+              <div class="example-label">示例 (Contoh):</div>
+              <div class="example-mandarin">请协调各部门的时间安排。</div>
+              <div class="example-pinyin">
+                Qǐng xiétiáo gè bùmén de shíjiān ānpái.
+              </div>
+              <div class="example-translation">
+                Tolong koordinasikan jadwal antar departemen.
+              </div>
+            </div>
+          </div>
+
+          <div class="vocab-card">
+            <div class="vocab-header">
+              <div class="vocab-mandarin">合作</div>
+              <div class="vocab-pinyin">hézuò</div>
+              <div class="vocab-meaning">kerjasama / cooperation</div>
+            </div>
+            <div class="vocab-example">
+              <div class="example-label">示例 (Contoh):</div>
+              <div class="example-mandarin">我们期待与贵公司长期合作。</div>
+              <div class="example-pinyin">
+                Wǒmen qīdài yǔ guì gōngsī chángqī hézuò.
+              </div>
+              <div class="example-translation">
+                Kami berharap dapat bekerja sama jangka panjang dengan
+                perusahaan Anda.
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Detection Equipment -->
+        <div class="category-header">
+          <h3>
+            <span class="category-icon">🔍</span>
+            Peralatan Deteksi & Inspeksi
+          </h3>
+        </div>
+        <div class="vocab-grid">
+          <div class="vocab-card">
+            <div class="vocab-header">
+              <div class="vocab-mandarin">金属探测器</div>
+              <div class="vocab-pinyin">jīnshǔ tàncèqì</div>
+              <div class="vocab-meaning">metal detector</div>
+            </div>
+            <div class="vocab-example">
+              <div class="example-label">示例 (Contoh):</div>
+              <div class="example-mandarin">
+                生产线上安装了金属探测器以保证食品安全。
+              </div>
+              <div class="example-pinyin">
+                Shēngchǎn xiàn shàng ānzhuāng le jīnshǔ tàncèqì yǐ bǎozhèng
+                shípǐn ānquán.
+              </div>
+              <div class="example-translation">
+                Di lini produksi dipasang metal detector untuk menjamin keamanan
+                makanan.
+              </div>
+            </div>
+          </div>
+
+          <div class="vocab-card">
+            <div class="vocab-header">
+              <div class="vocab-mandarin">磁铁</div>
+              <div class="vocab-pinyin">cítiě</div>
+              <div class="vocab-meaning">magnet</div>
+            </div>
+            <div class="vocab-example">
+              <div class="example-label">示例 (Contoh):</div>
+              <div class="example-mandarin">使用磁铁可以快速分离金属杂质。</div>
+              <div class="example-pinyin">
+                Shǐyòng cítiě kěyǐ kuàisù fēnlí jīnshǔ zázhì.
+              </div>
+              <div class="example-translation">
+                Menggunakan magnet dapat memisahkan kontaminan logam dengan
+                cepat.
+              </div>
+            </div>
+          </div>
+
+          <div class="vocab-card">
+            <div class="vocab-header">
+              <div class="vocab-mandarin">X光机</div>
+              <div class="vocab-pinyin">X guāngjī</div>
+              <div class="vocab-meaning">mesin X-ray / X-ray machine</div>
+            </div>
+            <div class="vocab-example">
+              <div class="example-label">示例 (Contoh):</div>
+              <div class="example-mandarin">X光机用于检查包装内的异物。</div>
+              <div class="example-pinyin">
+                X guāngjī yòng yú jiǎnchá bāozhuāng nèi de yìwù.
+              </div>
+              <div class="example-translation">
+                Mesin X-ray digunakan untuk memeriksa benda asing di dalam
+                kemasan.
+              </div>
+            </div>
+          </div>
+
+          <div class="vocab-card">
+            <div class="vocab-header">
+              <div class="vocab-mandarin">X射线检查</div>
+              <div class="vocab-pinyin">X shèxiàn jiǎnchá</div>
+              <div class="vocab-meaning">
+                pemeriksaan sinar-X / X-ray inspection
+              </div>
+            </div>
+            <div class="vocab-example">
+              <div class="example-label">示例 (Contoh):</div>
+              <div class="example-mandarin">
+                所有出口货物都要经过X射线检查。
+              </div>
+              <div class="example-pinyin">
+                Suǒyǒu chūkǒu huòwù dōu yào jīngguò X shèxiàn jiǎnchá.
+              </div>
+              <div class="example-translation">
+                Semua barang ekspor harus melalui pemeriksaan sinar-X.
+              </div>
+            </div>
+          </div>
+
+          <div class="vocab-card">
+            <div class="vocab-header">
+              <div class="vocab-mandarin">金属分离器</div>
+              <div class="vocab-pinyin">jīnshǔ fēnlí qì</div>
+              <div class="vocab-meaning">metal separator</div>
+            </div>
+            <div class="vocab-example">
+              <div class="example-label">示例 (Contoh):</div>
+              <div class="example-mandarin">金属分离器能有效保护下游设备。</div>
+              <div class="example-pinyin">
+                Jīnshǔ fēnlí qì néng yǒuxiào bǎohù xiàyóu shèbèi.
+              </div>
+              <div class="example-translation">
+                Metal separator dapat melindungi peralatan hilir secara efektif.
+              </div>
+            </div>
+          </div>
+
+          <div class="vocab-card">
+            <div class="vocab-header">
+              <div class="vocab-mandarin">分离装置</div>
+              <div class="vocab-pinyin">fēnlí zhuāngzhì</div>
+              <div class="vocab-meaning">
+                perangkat pemisah / separator device
+              </div>
+            </div>
+            <div class="vocab-example">
+              <div class="example-label">示例 (Contoh):</div>
+              <div class="example-mandarin">请检查分离装置是否有堵塞。</div>
+              <div class="example-pinyin">
+                Qǐng jiǎnchá fēnlí zhuāngzhì shìfǒu yǒu dǔsè.
+              </div>
+              <div class="example-translation">
+                Tolong periksa apakah perangkat pemisah tersumbat.
+              </div>
+            </div>
+          </div>
+
+          <div class="vocab-card">
+            <div class="vocab-header">
+              <div class="vocab-mandarin">检重机</div>
+              <div class="vocab-pinyin">jiǎnzhòng jī</div>
+              <div class="vocab-meaning">check weigher</div>
+            </div>
+            <div class="vocab-example">
+              <div class="example-label">示例 (Contoh):</div>
+              <div class="example-mandarin">
+                检重机会自动剔除重量不合格的包装。
+              </div>
+              <div class="example-pinyin">
+                Jiǎnzhòng jī huì zìdòng tìchú zhòngliàng bù hégé de bāozhuāng.
+              </div>
+              <div class="example-translation">
+                Check weigher akan secara otomatis menyingkirkan kemasan dengan
+                berat tidak sesuai.
+              </div>
+            </div>
+          </div>
+
+          <div class="vocab-card">
+            <div class="vocab-header">
+              <div class="vocab-mandarin">剔除器</div>
+              <div class="vocab-pinyin">tìchú qì</div>
+              <div class="vocab-meaning">rejector / ejector device</div>
+            </div>
+            <div class="vocab-example">
+              <div class="example-label">示例 (Contoh):</div>
+              <div class="example-mandarin">剔除器在检测到不合格品时启动。</div>
+              <div class="example-pinyin">
+                Tìchú qì zài jiǎncè dào bù hégé pǐn shí qǐdòng.
+              </div>
+              <div class="example-translation">
+                Rejector akan aktif saat mendeteksi barang tidak layak.
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Production Equipment -->
+        <div class="category-header">
+          <h3>
+            <span class="category-icon">⚙️</span>
+            Peralatan Produksi
+          </h3>
+        </div>
+        <div class="vocab-grid">
+          <div class="vocab-card">
+            <div class="vocab-header">
+              <div class="vocab-mandarin">真空泵</div>
+              <div class="vocab-pinyin">zhēnkōng bèng</div>
+              <div class="vocab-meaning">vacuum pump</div>
+            </div>
+            <div class="vocab-example">
+              <div class="example-label">示例 (Contoh):</div>
+              <div class="example-mandarin">真空泵出现故障需要立即维修。</div>
+              <div class="example-pinyin">
+                Zhēnkōng bèng chūxiàn gùzhàng xūyào lìjí wéixiū.
+              </div>
+              <div class="example-translation">
+                Jika vacuum pump rusak harus segera diperbaiki.
+              </div>
+            </div>
+          </div>
+
+          <div class="vocab-card">
+            <div class="vocab-header">
+              <div class="vocab-mandarin">真空包装机</div>
+              <div class="vocab-pinyin">zhēnkōng bāozhuāng jī</div>
+              <div class="vocab-meaning">mesin vacuum packaging</div>
+            </div>
+            <div class="vocab-example">
+              <div class="example-label">示例 (Contoh):</div>
+              <div class="example-mandarin">真空包装机能延长产品保质期。</div>
+              <div class="example-pinyin">
+                Zhēnkōng bāozhuāng jī néng yáncháng chǎnpǐn bǎozhìqī.
+              </div>
+              <div class="example-translation">
+                Mesin vacuum packaging dapat memperpanjang masa simpan produk.
+              </div>
+            </div>
+          </div>
+
+          <div class="vocab-card">
+            <div class="vocab-header">
+              <div class="vocab-mandarin">传送带</div>
+              <div class="vocab-pinyin">chuánsòngdài</div>
+              <div class="vocab-meaning">conveyor belt</div>
+            </div>
+            <div class="vocab-example">
+              <div class="example-label">示例 (Contoh):</div>
+              <div class="example-mandarin">请不要在传送带上放手提包。</div>
+              <div class="example-pinyin">
+                Qǐng bùyào zài chuánsòngdài shàng fàng shǒutí bāo.
+              </div>
+              <div class="example-translation">
+                Jangan letakkan tas tangan di atas conveyor belt.
+              </div>
+            </div>
+          </div>
+
+          <div class="vocab-card">
+            <div class="vocab-header">
+              <div class="vocab-mandarin">送料器</div>
+              <div class="vocab-pinyin">sòngliào qì</div>
+              <div class="vocab-meaning">feeder (alat pemberi bahan)</div>
+            </div>
+            <div class="vocab-example">
+              <div class="example-label">示例 (Contoh):</div>
+              <div class="example-mandarin">送料器需要定期清洁以防堵塞。</div>
+              <div class="example-pinyin">
+                Sòngliào qì xūyào dìngqí qīngjié yǐ fáng dǔsè.
+              </div>
+              <div class="example-translation">
+                Feeder perlu dibersihkan rutin untuk mencegah penyumbatan.
+              </div>
+            </div>
+          </div>
+
+          <div class="vocab-card">
+            <div class="vocab-header">
+              <div class="vocab-mandarin">控制面板</div>
+              <div class="vocab-pinyin">kòngzhì miànbǎn</div>
+              <div class="vocab-meaning">panel kontrol / control panel</div>
+            </div>
+            <div class="vocab-example">
+              <div class="example-label">示例 (Contoh):</div>
+              <div class="example-mandarin">
+                操作员应熟悉控制面板的所有按钮。
+              </div>
+              <div class="example-pinyin">
+                Cāozuòyuán yīng shúxī kòngzhì miànbǎn de suǒyǒu ànniǔ.
+              </div>
+              <div class="example-translation">
+                Operator harus menguasai semua tombol di panel kontrol.
+              </div>
+            </div>
+          </div>
+
+          <div class="vocab-card">
+            <div class="vocab-header">
+              <div class="vocab-mandarin">传感器</div>
+              <div class="vocab-pinyin">chuángǎnqì</div>
+              <div class="vocab-meaning">sensor</div>
+            </div>
+            <div class="vocab-example">
+              <div class="example-label">示例 (Contoh):</div>
+              <div class="example-mandarin">传感器灵敏度需要校准。</div>
+              <div class="example-pinyin">
+                Chuángǎnqì língmǐndù xūyào jiàozhǔn.
+              </div>
+              <div class="example-translation">
+                Sensitivitas sensor perlu dikalibrasi.
+              </div>
+            </div>
+          </div>
+
+          <div class="vocab-card">
+            <div class="vocab-header">
+              <div class="vocab-mandarin">灵敏度</div>
+              <div class="vocab-pinyin">língmǐndù</div>
+              <div class="vocab-meaning">sensitivitas / sensitivity</div>
+            </div>
+            <div class="vocab-example">
+              <div class="example-label">示例 (Contoh):</div>
+              <div class="example-mandarin">
+                把灵敏度调高可以检测更小的金属颗粒。
+              </div>
+              <div class="example-pinyin">
+                Bǎ língmǐndù tiáo gāo kěyǐ jiǎncè gèng xiǎo de jīnshǔ kēlì.
+              </div>
+              <div class="example-translation">
+                Menaikkan sensitivitas dapat mendeteksi partikel logam yang
+                lebih kecil.
+              </div>
+            </div>
+          </div>
+
+          <div class="vocab-card">
+            <div class="vocab-header">
+              <div class="vocab-mandarin">校准</div>
+              <div class="vocab-pinyin">jiàozhǔn</div>
+              <div class="vocab-meaning">kalibrasi / calibration</div>
+            </div>
+            <div class="vocab-example">
+              <div class="example-label">示例 (Contoh):</div>
+              <div class="example-mandarin">设备每个月都要进行一次校准。</div>
+              <div class="example-pinyin">
+                Shèbèi měi gè yuè dōu yào jìnxíng yīcì jiàozhǔn.
+              </div>
+              <div class="example-translation">
+                Peralatan harus dikalibrasi sekali setiap bulan.
+              </div>
+            </div>
+          </div>
+
+          <div class="vocab-card">
+            <div class="vocab-header">
+              <div class="vocab-mandarin">维护</div>
+              <div class="vocab-pinyin">wèihù</div>
+              <div class="vocab-meaning">pemeliharaan / maintenance</div>
+            </div>
+            <div class="vocab-example">
+              <div class="example-label">示例 (Contoh):</div>
+              <div class="example-mandarin">设备维护计划已安排在周末。</div>
+              <div class="example-pinyin">
+                Shèbèi wèihù jìhuà yǐ ānpái zài zhōumò.
+              </div>
+              <div class="example-translation">
+                Jadwal pemeliharaan peralatan telah dijadwalkan di akhir pekan.
+              </div>
+            </div>
+          </div>
+
+          <div class="vocab-card">
+            <div class="vocab-header">
+              <div class="vocab-mandarin">故障诊断</div>
+              <div class="vocab-pinyin">gùzhàng zhěnduàn</div>
+              <div class="vocab-meaning">
+                diagnosa kerusakan / fault diagnosis
+              </div>
+            </div>
+            <div class="vocab-example">
+              <div class="example-label">示例 (Contoh):</div>
+              <div class="example-mandarin">工程师正在进行故障诊断。</div>
+              <div class="example-pinyin">
+                Gōngchéngshī zhèngzài jìnxíng gùzhàng zhěnduàn.
+              </div>
+              <div class="example-translation">
+                Teknisi sedang melakukan diagnosa kerusakan.
+              </div>
+            </div>
+          </div>
+
+          <div class="vocab-card">
+            <div class="vocab-header">
+              <div class="vocab-mandarin">零件</div>
+              <div class="vocab-pinyin">língjiàn</div>
+              <div class="vocab-meaning">komponen / part</div>
+            </div>
+            <div class="vocab-example">
+              <div class="example-label">示例 (Contoh):</div>
+              <div class="example-mandarin">缺少一个零件导致机器停机。</div>
+              <div class="example-pinyin">
+                Quē shǎo yī gè língjiàn dǎozhì jīqì tíngjī.
+              </div>
+              <div class="example-translation">
+                Kekurangan satu komponen menyebabkan mesin berhenti.
+              </div>
+            </div>
+          </div>
+
+          <div class="vocab-card">
+            <div class="vocab-header">
+              <div class="vocab-mandarin">备件</div>
+              <div class="vocab-pinyin">bèijiàn</div>
+              <div class="vocab-meaning">suku cadang / spare part</div>
+            </div>
+            <div class="vocab-example">
+              <div class="example-label">示例 (Contoh):</div>
+              <div class="example-mandarin">我们已经订购了必要的备件。</div>
+              <div class="example-pinyin">
+                Wǒmen yǐjīng dìnggòu le bìyào de bèijiàn.
+              </div>
+              <div class="example-translation">
+                Kita sudah memesan suku cadang yang diperlukan.
+              </div>
+            </div>
+          </div>
+
+          <div class="vocab-card">
+            <div class="vocab-header">
+              <div class="vocab-mandarin">运行速度</div>
+              <div class="vocab-pinyin">yùnxíng sùdù</div>
+              <div class="vocab-meaning">kecepatan operasi / running speed</div>
+            </div>
+            <div class="vocab-example">
+              <div class="example-label">示例 (Contoh):</div>
+              <div class="example-mandarin">
+                请把运行速度降低十个百分点进行测试。
+              </div>
+              <div class="example-pinyin">
+                Qǐng bǎ yùnxíng sùdù jiàngdī shí gè bǎi fēndiǎn jìnxíng cèshì.
+              </div>
+              <div class="example-translation">
+                Tolong turunkan kecepatan operasi 10% untuk pengujian.
+              </div>
+            </div>
+          </div>
+
+          <div class="vocab-card">
+            <div class="vocab-header">
+              <div class="vocab-mandarin">生产线</div>
+              <div class="vocab-pinyin">shēngchǎn xiàn</div>
+              <div class="vocab-meaning">lini produksi / production line</div>
+            </div>
+            <div class="vocab-example">
+              <div class="example-label">示例 (Contoh):</div>
+              <div class="example-mandarin">新设备将被安装到主生产线。</div>
+              <div class="example-pinyin">
+                Xīn shèbèi jiāng bèi ānzhuāng dào zhǔ shēngchǎn xiàn.
+              </div>
+              <div class="example-translation">
+                Peralatan baru akan dipasang di lini produksi utama.
+              </div>
+            </div>
+          </div>
+
+          <div class="vocab-card">
+            <div class="vocab-header">
+              <div class="vocab-mandarin">自动化</div>
+              <div class="vocab-pinyin">zìdònghuà</div>
+              <div class="vocab-meaning">otomatisasi / automation</div>
+            </div>
+            <div class="vocab-example">
+              <div class="example-label">示例 (Contoh):</div>
+              <div class="example-mandarin">
+                自动化可以提高生产效率并减少错误。
+              </div>
+              <div class="example-pinyin">
+                Zìdònghuà kěyǐ tígāo shēngchǎn xiàolǜ bìng jiǎnshǎo cuòwù.
+              </div>
+              <div class="example-translation">
+                Otomatisasi dapat meningkatkan efisiensi produksi dan mengurangi
+                kesalahan.
+              </div>
+            </div>
+          </div>
+
+          <div class="vocab-card">
+            <div class="vocab-header">
+              <div class="vocab-mandarin">人工</div>
+              <div class="vocab-pinyin">réngōng</div>
+              <div class="vocab-meaning">tenaga manusia / manual labor</div>
+            </div>
+            <div class="vocab-example">
+              <div class="example-label">示例 (Contoh):</div>
+              <div class="example-mandarin">某些工序仍需要人工操作。</div>
+              <div class="example-pinyin">
+                Mǒuxiē gōngxù réng xūyào réngōng cāozuò.
+              </div>
+              <div class="example-translation">
+                Beberapa tahap masih memerlukan pekerjaan manual.
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Testing & R&D -->
+        <div class="category-header">
+          <h3>
+            <span class="category-icon">🔬</span>
+            Testing & Research Development
+          </h3>
+        </div>
+        <div class="vocab-grid">
+          <div class="vocab-card">
+            <div class="vocab-header">
+              <div class="vocab-mandarin">测试</div>
+              <div class="vocab-pinyin">cèshì</div>
+              <div class="vocab-meaning">uji / test</div>
+            </div>
+            <div class="vocab-example">
+              <div class="example-label">示例 (Contoh):</div>
+              <div class="example-mandarin">
+                在出厂前，所有产品都要经过测试。
+              </div>
+              <div class="example-pinyin">
+                Zài chūchǎng qián, suǒyǒu chǎnpǐn dōu yào jīngguò cèshì.
+              </div>
+              <div class="example-translation">
+                Sebelum keluar pabrik, semua produk harus diuji.
+              </div>
+            </div>
+          </div>
+
+          <div class="vocab-card">
+            <div class="vocab-header">
+              <div class="vocab-mandarin">检测</div>
+              <div class="vocab-pinyin">jiǎncè</div>
+              <div class="vocab-meaning">pemeriksaan / detection / testing</div>
+            </div>
+            <div class="vocab-example">
+              <div class="example-label">示例 (Contoh):</div>
+              <div class="example-mandarin">该设备专用于检测微量金属。</div>
+              <div class="example-pinyin">
+                Gāi shèbèi zhuānyòng yú jiǎncè wēiliàng jīnshǔ.
+              </div>
+              <div class="example-translation">
+                Peralatan ini khusus untuk mendeteksi logam dalam jumlah kecil.
+              </div>
+            </div>
+          </div>
+
+          <div class="vocab-card">
+            <div class="vocab-header">
+              <div class="vocab-mandarin">检验</div>
+              <div class="vocab-pinyin">jiǎnyàn</div>
+              <div class="vocab-meaning">
+                inspeksi / inspection (quality check)
+              </div>
+            </div>
+            <div class="vocab-example">
+              <div class="example-label">示例 (Contoh):</div>
+              <div class="example-mandarin">出厂前需要通过最终检验。</div>
+              <div class="example-pinyin">
+                Chūchǎng qián xūyào tōngguò zuìzhōng jiǎnyàn.
+              </div>
+              <div class="example-translation">
+                Sebelum dikirim harus lulus inspeksi akhir.
+              </div>
+            </div>
+          </div>
+
+          <div class="vocab-card">
+            <div class="vocab-header">
+              <div class="vocab-mandarin">实验室</div>
+              <div class="vocab-pinyin">shíyànshì</div>
+              <div class="vocab-meaning">laboratorium / lab</div>
+            </div>
+            <div class="vocab-example">
+              <div class="example-label">示例 (Contoh):</div>
+              <div class="example-mandarin">研发团队在实验室进行材料测试。</div>
+              <div class="example-pinyin">
+                Yánfā tuánduì zài shíyànshì jìnxíng cáiliào cèshì.
+              </div>
+              <div class="example-translation">
+                Tim R&D melakukan pengujian material di laboratorium.
+              </div>
+            </div>
+          </div>
+
+          <div class="vocab-card">
+            <div class="vocab-header">
+              <div class="vocab-mandarin">研发（部）</div>
+              <div class="vocab-pinyin">yánfā (bù)</div>
+              <div class="vocab-meaning">
+                penelitian & pengembangan (departemen R&D)
+              </div>
+            </div>
+            <div class="vocab-example">
+              <div class="example-label">示例 (Contoh):</div>
+              <div class="example-mandarin">研发部正在开发新型号探测器。</div>
+              <div class="example-pinyin">
+                Yánfā bù zhèngzài kāifā xīn xínghào tàncèqì.
+              </div>
+              <div class="example-translation">
+                Departemen R&D sedang mengembangkan model detector baru.
+              </div>
+            </div>
+          </div>
+
+          <div class="vocab-card">
+            <div class="vocab-header">
+              <div class="vocab-mandarin">样机</div>
+              <div class="vocab-pinyin">yàngjī</div>
+              <div class="vocab-meaning">prototipe / sample machine</div>
+            </div>
+            <div class="vocab-example">
+              <div class="example-label">示例 (Contoh):</div>
+              <div class="example-mandarin">工程师正在调试样机。</div>
+              <div class="example-pinyin">
+                Gōngchéngshī zhèngzài tiáoshì yàngjī.
+              </div>
+              <div class="example-translation">
+                Insinyur sedang menyetel prototipe.
+              </div>
+            </div>
+          </div>
+
+          <div class="vocab-card">
+            <div class="vocab-header">
+              <div class="vocab-mandarin">样品</div>
+              <div class="vocab-pinyin">yàngpǐn</div>
+              <div class="vocab-meaning">sampel / sample</div>
+            </div>
+            <div class="vocab-example">
+              <div class="example-label">示例 (Contoh):</div>
+              <div class="example-mandarin">请把样品邮寄到我们办公室。</div>
+              <div class="example-pinyin">
+                Qǐng bǎ yàngpǐn yóujì dào wǒmen bàngōngshì.
+              </div>
+              <div class="example-translation">
+                Tolong kirimkan sampel ke kantor kami.
+              </div>
+            </div>
+          </div>
+
+          <div class="vocab-card">
+            <div class="vocab-header">
+              <div class="vocab-mandarin">配方</div>
+              <div class="vocab-pinyin">pèifāng</div>
+              <div class="vocab-meaning">
+                formulasi / formula (biasanya R&D produk)
+              </div>
+            </div>
+            <div class="vocab-example">
+              <div class="example-label">示例 (Contoh):</div>
+              <div class="example-mandarin">
+                研发团队正在优化配方以提高稳定性。
+              </div>
+              <div class="example-pinyin">
+                Yánfā tuánduì zhèngzài yōuhuà pèifāng yǐ tígāo wěndìngxìng.
+              </div>
+              <div class="example-translation">
+                Tim R&D sedang mengoptimalkan formulasi untuk meningkatkan
+                stabilitas.
+              </div>
+            </div>
+          </div>
+
+          <div class="vocab-card">
+            <div class="vocab-header">
+              <div class="vocab-mandarin">设计</div>
+              <div class="vocab-pinyin">shèjì</div>
+              <div class="vocab-meaning">desain / design</div>
+            </div>
+            <div class="vocab-example">
+              <div class="example-label">示例 (Contoh):</div>
+              <div class="example-mandarin">新产品的设计需要考虑易维护性。</div>
+              <div class="example-pinyin">
+                Xīn chǎnpǐn de shèjì xūyào kǎolǜ yì wéihù xìng.
+              </div>
+              <div class="example-translation">
+                Desain produk baru perlu mempertimbangkan kemudahan perawatan.
+              </div>
+            </div>
+          </div>
+
+          <div class="vocab-card">
+            <div class="vocab-header">
+              <div class="vocab-mandarin">数据分析</div>
+              <div class="vocab-pinyin">shùjù fēnxī</div>
+              <div class="vocab-meaning">analisis data / data analysis</div>
+            </div>
+            <div class="vocab-example">
+              <div class="example-label">示例 (Contoh):</div>
+              <div class="example-mandarin">
+                通过数据分析，我们找到了问题的根源。
+              </div>
+              <div class="example-pinyin">
+                Tōngguò shùjù fēnxī, wǒmen zhǎodào le wèntí de gēnyuán.
+              </div>
+              <div class="example-translation">
+                Melalui analisis data, kita menemukan akar permasalahan.
+              </div>
+            </div>
+          </div>
+
+          <div class="vocab-card">
+            <div class="vocab-header">
+              <div class="vocab-mandarin">报表</div>
+              <div class="vocab-pinyin">bàobiǎo</div>
+              <div class="vocab-meaning">laporan tabel / report sheet</div>
+            </div>
+            <div class="vocab-example">
+              <div class="example-label">示例 (Contoh):</div>
+              <div class="example-mandarin">请把月度报表上传到共享文件夹。</div>
+              <div class="example-pinyin">
+                Qǐng bǎ yuèdù bàobiǎo shàngchuán dào gòngxiǎng wénjiànjiā.
+              </div>
+              <div class="example-translation">
+                Tolong unggah laporan bulanan ke folder bersama.
+              </div>
+            </div>
+          </div>
+
+          <div class="vocab-card">
+            <div class="vocab-header">
+              <div class="vocab-mandarin">标准操作程序</div>
+              <div class="vocab-pinyin">biāozhǔn cāozuò chéngxù</div>
+              <div class="vocab-meaning">prosedur operasi standar (SOP)</div>
+            </div>
+            <div class="vocab-example">
+              <div class="example-label">示例 (Contoh):</div>
+              <div class="example-mandarin">所有员工必须遵守SOP。</div>
+              <div class="example-pinyin">
+                Suǒyǒu yuángōng bìxū zūnshǒu SOP.
+              </div>
+              <div class="example-translation">
+                Semua karyawan harus mematuhi SOP.
+              </div>
+            </div>
+          </div>
+
+          <div class="vocab-card">
+            <div class="vocab-header">
+              <div class="vocab-mandarin">安全规范</div>
+              <div class="vocab-pinyin">ānquán guīfàn</div>
+              <div class="vocab-meaning">
+                standar keselamatan / safety regulation
+              </div>
+            </div>
+            <div class="vocab-example">
+              <div class="example-label">示例 (Contoh):</div>
+              <div class="example-mandarin">请在车间显著位置张贴安全规范。</div>
+              <div class="example-pinyin">
+                Qǐng zài chējiān xiǎnzhù wèizhì zhāngtiē ānquán guīfàn.
+              </div>
+              <div class="example-translation">
+                Tolong pasang peraturan keselamatan di tempat yang mudah
+                terlihat di bengkel.
+              </div>
+            </div>
+          </div>
+
+          <div class="vocab-card">
+            <div class="vocab-header">
+              <div class="vocab-mandarin">环境监控</div>
+              <div class="vocab-pinyin">huánjìng jiānkòng</div>
+              <div class="vocab-meaning">
+                pemantauan lingkungan / environmental monitoring
+              </div>
+            </div>
+            <div class="vocab-example">
+              <div class="example-label">示例 (Contoh):</div>
+              <div class="example-mandarin">
+                工厂安装了环境监控系统以监测温度和湿度。
+              </div>
+              <div class="example-pinyin">
+                Gōngchǎng ānzhuāng le huánjìng jiānkòng xìtǒng yǐ jiāncè wēndù
+                hé shīdù.
+              </div>
+              <div class="example-translation">
+                Pabrik memasang sistem pemantauan lingkungan untuk memonitor
+                suhu dan kelembapan.
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Gallery Section -->
+    <section class="gallery-section">
+      <div class="container">
+        <div class="section-header">
+          <h2 class="section-title">Galeri Pengalaman</h2>
+        </div>
+        <div class="gallery-grid">
+          <div class="gallery-item">
+            <img
+              src="public/gambar1.jpeg"
+              alt="Pengalaman Magang 1"
+              onerror="this.parentElement.innerHTML='<div class=\'gallery-placeholder\'><div class=\'gallery-placeholder-icon\'>📸</div><div class=\'gallery-placeholder-text\'>Foto Pengalaman 1</div></div>'"
+            />
+          </div>
+          <div class="gallery-item">
+            <img
+              src="public/gambar2.jpeg"
+              alt="Pengalaman Magang 2"
+              onerror="this.parentElement.innerHTML='<div class=\'gallery-placeholder\'><div class=\'gallery-placeholder-icon\'>📸</div><div class=\'gallery-placeholder-text\'>Foto Pengalaman 2</div></div>'"
+            />
+          </div>
+          <div class="gallery-item">
+            <img
+              src="public/gambar3.jpeg"
+              alt="Pengalaman Magang 3"
+              onerror="this.parentElement.innerHTML='<div class=\'gallery-placeholder\'><div class=\'gallery-placeholder-icon\'>📸</div><div class=\'gallery-placeholder-text\'>Foto Pengalaman 3</div></div>'"
+            />
+          </div>
+          <div class="gallery-item">
+            <img
+              src="public/gambar5.jpeg"
+              alt="Pengalaman Magang 4"
+              onerror="this.parentElement.innerHTML='<div class=\'gallery-placeholder\'><div class=\'gallery-placeholder-icon\'>📸</div><div class=\'gallery-placeholder-text\'>Foto Pengalaman 4</div></div>'"
+            />
+          </div>
+          <div class="gallery-item">
+            <img
+              src="public/gambar4.jpeg"
+              alt="Pengalaman Magang 5"
+              onerror="this.parentElement.innerHTML='<div class=\'gallery-placeholder\'><div class=\'gallery-placeholder-icon\'>📸</div><div class=\'gallery-placeholder-text\'>Foto Pengalaman 5</div></div>'"
+            />
+          </div>
+          <div class="gallery-item">
+            <img
+              src="public/gambar32.jpeg"
+              alt="Pengalaman Magang 6"
+              onerror="this.parentElement.innerHTML='<div class=\'gallery-placeholder\'><div class=\'gallery-placeholder-icon\'>📸</div><div class=\'gallery-placeholder-text\'>Foto Pengalaman 6</div></div>'"
+            />
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+      <div class="footer-content">
+        <h3>REYHAN EKAPRANA TARIGAN</h3>
+        <p>Pendidikan Bahasa Mandarin</p>
+        <p>Angkatan 2023 I</p>
+        <p class="footer-id">NIM: 23020774111</p>
+      </div>
+    </footer>
+  </body>
+</html>

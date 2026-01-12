@@ -1,0 +1,1159 @@
+<!DOCTYPE html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Kamus Lapangan Magang - Reyhan</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Crimson+Pro:wght@400;600;700&family=Noto+Sans+SC:wght@400;500;700&family=DM+Sans:wght@400;500;700&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      /* ===================================
+   KAMUS LAPANGAN MAGANG - CSS STYLING
+   Theme: Interactive Green with Enhanced Hero
+   =================================== */
+
+      /* CSS Variables for Green Theme */
+      :root {
+        --primary-green: #2d7a3e;
+        --secondary-green: #4caf50;
+        --light-green: #a8e6a1;
+        --dark-green: #1b5e20;
+        --accent-green: #66bb6a;
+        --bg-light: #f1f8f4;
+        --bg-white: #ffffff;
+        --text-dark: #1a1a1a;
+        --text-light: #666666;
+        --shadow: rgba(45, 122, 62, 0.1);
+        --shadow-hover: rgba(45, 122, 62, 0.2);
+      }
+
+      /* Reset & Base Styles */
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      body {
+        font-family: "DM Sans", -apple-system, BlinkMacSystemFont, "Segoe UI",
+          sans-serif;
+        line-height: 1.6;
+        color: var(--text-dark);
+        background-color: var(--bg-light);
+        overflow-x: hidden;
+      }
+
+      /* ===================================
+   HERO SECTION - ENHANCED WITH ANIMATIONS
+   =================================== */
+      .hero {
+        min-height: 100vh;
+        background: linear-gradient(
+          135deg,
+          var(--primary-green) 0%,
+          var(--dark-green) 100%
+        );
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        position: relative;
+        overflow: hidden;
+        color: white;
+        text-align: center;
+        padding: 2rem;
+      }
+
+      /* Animated Floating Circles Background */
+      .hero::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background: radial-gradient(
+            circle at 20% 30%,
+            rgba(168, 230, 161, 0.25) 0%,
+            transparent 40%
+          ),
+          radial-gradient(
+            circle at 80% 70%,
+            rgba(102, 187, 106, 0.2) 0%,
+            transparent 40%
+          ),
+          radial-gradient(
+            circle at 50% 50%,
+            rgba(76, 175, 80, 0.15) 0%,
+            transparent 50%
+          );
+        animation: float 15s ease-in-out infinite;
+      }
+
+      /* Rotating Pattern Overlay */
+      .hero::after {
+        content: "";
+        position: absolute;
+        top: -50%;
+        left: -50%;
+        width: 200%;
+        height: 200%;
+        background: repeating-linear-gradient(
+          45deg,
+          transparent,
+          transparent 20px,
+          rgba(168, 230, 161, 0.03) 20px,
+          rgba(168, 230, 161, 0.03) 40px
+        );
+        animation: rotate 60s linear infinite;
+        pointer-events: none;
+      }
+
+      /* Floating Animation */
+      @keyframes float {
+        0%,
+        100% {
+          transform: translate(0, 0) scale(1);
+          opacity: 0.5;
+        }
+        25% {
+          transform: translate(40px, -40px) scale(1.1);
+          opacity: 0.7;
+        }
+        50% {
+          transform: translate(-30px, 20px) scale(0.95);
+          opacity: 0.8;
+        }
+        75% {
+          transform: translate(20px, 40px) scale(1.05);
+          opacity: 0.6;
+        }
+      }
+
+      /* Rotation Animation */
+      @keyframes rotate {
+        0% {
+          transform: rotate(0deg);
+        }
+        100% {
+          transform: rotate(360deg);
+        }
+      }
+
+      /* Glowing Orbs */
+      .glow-orb {
+        position: absolute;
+        border-radius: 50%;
+        filter: blur(60px);
+        opacity: 0.4;
+        animation: pulse-glow 8s ease-in-out infinite;
+        pointer-events: none;
+      }
+
+      .glow-orb:nth-child(1) {
+        width: 300px;
+        height: 300px;
+        background: var(--accent-green);
+        top: 10%;
+        left: 15%;
+        animation-delay: 0s;
+      }
+
+      .glow-orb:nth-child(2) {
+        width: 250px;
+        height: 250px;
+        background: var(--secondary-green);
+        bottom: 15%;
+        right: 20%;
+        animation-delay: 3s;
+      }
+
+      .glow-orb:nth-child(3) {
+        width: 200px;
+        height: 200px;
+        background: var(--light-green);
+        top: 50%;
+        right: 10%;
+        animation-delay: 6s;
+      }
+
+      @keyframes pulse-glow {
+        0%,
+        100% {
+          transform: scale(1);
+          opacity: 0.3;
+        }
+        50% {
+          transform: scale(1.2);
+          opacity: 0.5;
+        }
+      }
+
+      /* Animated Particles */
+      .hero-particles {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        top: 0;
+        left: 0;
+        pointer-events: none;
+      }
+
+      .particle {
+        position: absolute;
+        background: rgba(255, 255, 255, 0.3);
+        border-radius: 50%;
+        animation: rise 15s infinite ease-in;
+      }
+
+      .particle:nth-child(1) {
+        width: 10px;
+        height: 10px;
+        left: 10%;
+        animation-delay: 0s;
+        animation-duration: 12s;
+      }
+
+      .particle:nth-child(2) {
+        width: 15px;
+        height: 15px;
+        left: 25%;
+        animation-delay: 2s;
+        animation-duration: 15s;
+      }
+
+      .particle:nth-child(3) {
+        width: 8px;
+        height: 8px;
+        left: 40%;
+        animation-delay: 4s;
+        animation-duration: 10s;
+      }
+
+      .particle:nth-child(4) {
+        width: 12px;
+        height: 12px;
+        left: 60%;
+        animation-delay: 1s;
+        animation-duration: 13s;
+      }
+
+      .particle:nth-child(5) {
+        width: 14px;
+        height: 14px;
+        left: 75%;
+        animation-delay: 3s;
+        animation-duration: 14s;
+      }
+
+      .particle:nth-child(6) {
+        width: 9px;
+        height: 9px;
+        left: 90%;
+        animation-delay: 5s;
+        animation-duration: 11s;
+      }
+
+      @keyframes rise {
+        0% {
+          bottom: -100px;
+          opacity: 0;
+          transform: translateX(0) rotate(0deg);
+        }
+        10% {
+          opacity: 1;
+        }
+        90% {
+          opacity: 1;
+        }
+        100% {
+          bottom: 110vh;
+          opacity: 0;
+          transform: translateX(100px) rotate(360deg);
+        }
+      }
+
+      .hero-content {
+        position: relative;
+        z-index: 2;
+        max-width: 800px;
+        animation: fadeInUp 1s ease-out;
+      }
+
+      @keyframes fadeInUp {
+        from {
+          opacity: 0;
+          transform: translateY(30px);
+        }
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+
+      .hero-badge {
+        display: inline-block;
+        background: rgba(255, 255, 255, 0.2);
+        backdrop-filter: blur(10px);
+        padding: 0.5rem 1.5rem;
+        border-radius: 50px;
+        font-size: 0.9rem;
+        font-weight: 500;
+        margin-bottom: 1.5rem;
+        border: 1px solid rgba(255, 255, 255, 0.3);
+        animation: slideInDown 0.8s ease-out 0.2s both;
+      }
+
+      @keyframes slideInDown {
+        from {
+          opacity: 0;
+          transform: translateY(-20px);
+        }
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+
+      .hero h1 {
+        font-family: "Crimson Pro", serif;
+        font-size: clamp(2rem, 5vw, 4rem);
+        font-weight: 700;
+        margin-bottom: 1rem;
+        letter-spacing: 2px;
+        animation: slideInDown 0.8s ease-out 0.4s both;
+        text-shadow: 0 2px 20px rgba(0, 0, 0, 0.2);
+      }
+
+      .hero-mandarin {
+        font-family: "Noto Sans SC", sans-serif;
+        font-size: clamp(1.2rem, 3vw, 2rem);
+        font-weight: 500;
+        margin-bottom: 1rem;
+        opacity: 0.9;
+        animation: slideInDown 0.8s ease-out 0.6s both;
+        text-shadow: 0 2px 15px rgba(0, 0, 0, 0.2);
+      }
+
+      .hero-info {
+        font-size: 1.1rem;
+        opacity: 0.85;
+        animation: slideInDown 0.8s ease-out 0.8s both;
+      }
+
+      /* Scroll Indicator */
+      .scroll-indicator {
+        position: absolute;
+        bottom: 2rem;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 30px;
+        height: 50px;
+        border: 2px solid rgba(255, 255, 255, 0.5);
+        border-radius: 25px;
+        z-index: 3;
+        animation: bounce 2s infinite;
+      }
+
+      .scroll-indicator::before {
+        content: "";
+        position: absolute;
+        top: 8px;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 6px;
+        height: 6px;
+        background: white;
+        border-radius: 50%;
+        animation: scroll 2s infinite;
+      }
+
+      @keyframes bounce {
+        0%,
+        100% {
+          transform: translateX(-50%) translateY(0);
+        }
+        50% {
+          transform: translateX(-50%) translateY(10px);
+        }
+      }
+
+      @keyframes scroll {
+        0% {
+          opacity: 1;
+          transform: translateX(-50%) translateY(0);
+        }
+        100% {
+          opacity: 0;
+          transform: translateX(-50%) translateY(20px);
+        }
+      }
+
+      /* ===================================
+   VOCABULARY SECTION
+   =================================== */
+      .vocab-section {
+        padding: 5rem 2rem;
+        background: var(--bg-light);
+      }
+
+      .container {
+        max-width: 1400px;
+        margin: 0 auto;
+      }
+
+      .section-header {
+        text-align: center;
+        margin-bottom: 4rem;
+        animation: fadeIn 1s ease-out;
+      }
+
+      @keyframes fadeIn {
+        from {
+          opacity: 0;
+        }
+        to {
+          opacity: 1;
+        }
+      }
+
+      .section-title {
+        font-family: "Crimson Pro", serif;
+        font-size: clamp(2rem, 4vw, 3rem);
+        color: var(--primary-green);
+        margin-bottom: 1rem;
+        position: relative;
+        display: inline-block;
+      }
+
+      .section-title::after {
+        content: "";
+        position: absolute;
+        bottom: -10px;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 100px;
+        height: 4px;
+        background: linear-gradient(
+          90deg,
+          var(--secondary-green),
+          var(--accent-green)
+        );
+        border-radius: 2px;
+      }
+
+      /* Category Header */
+      .category-header {
+        margin: 4rem 0 2rem;
+        animation: slideIn 0.6s ease-out;
+      }
+
+      @keyframes slideIn {
+        from {
+          opacity: 0;
+          transform: translateX(-30px);
+        }
+        to {
+          opacity: 1;
+          transform: translateX(0);
+        }
+      }
+
+      .category-header h3 {
+        font-size: clamp(1.5rem, 3vw, 2rem);
+        color: var(--primary-green);
+        display: flex;
+        align-items: center;
+        gap: 1rem;
+        padding: 1rem 1.5rem;
+        background: white;
+        border-radius: 15px;
+        box-shadow: 0 4px 15px var(--shadow);
+        transition: all 0.3s ease;
+      }
+
+      .category-header h3:hover {
+        transform: translateX(10px);
+        box-shadow: 0 6px 20px var(--shadow-hover);
+      }
+
+      .category-icon {
+        font-size: 2rem;
+        animation: rotate-icon 3s ease-in-out infinite;
+      }
+
+      @keyframes rotate-icon {
+        0%,
+        100% {
+          transform: rotate(0deg);
+        }
+        25% {
+          transform: rotate(-10deg);
+        }
+        75% {
+          transform: rotate(10deg);
+        }
+      }
+
+      /* Vocabulary Grid */
+      .vocab-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+        gap: 2rem;
+        margin-bottom: 3rem;
+      }
+
+      /* Vocabulary Card */
+      .vocab-card {
+        background: white;
+        border-radius: 20px;
+        padding: 2rem;
+        box-shadow: 0 4px 15px var(--shadow);
+        transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+        position: relative;
+        overflow: hidden;
+        animation: fadeInUp 0.6s ease-out both;
+        animation-delay: calc(var(--card-index, 0) * 0.05s);
+      }
+
+      .vocab-card::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 5px;
+        background: linear-gradient(
+          90deg,
+          var(--secondary-green),
+          var(--accent-green)
+        );
+        transform: scaleX(0);
+        transform-origin: left;
+        transition: transform 0.4s ease;
+      }
+
+      .vocab-card:hover::before {
+        transform: scaleX(1);
+      }
+
+      .vocab-card:hover {
+        transform: translateY(-10px) scale(1.02);
+        box-shadow: 0 15px 35px var(--shadow-hover);
+      }
+
+      /* Add stagger effect to cards */
+      .vocab-card:nth-child(1) {
+        --card-index: 1;
+      }
+      .vocab-card:nth-child(2) {
+        --card-index: 2;
+      }
+      .vocab-card:nth-child(3) {
+        --card-index: 3;
+      }
+      .vocab-card:nth-child(4) {
+        --card-index: 4;
+      }
+      .vocab-card:nth-child(5) {
+        --card-index: 5;
+      }
+      .vocab-card:nth-child(6) {
+        --card-index: 6;
+      }
+      .vocab-card:nth-child(7) {
+        --card-index: 7;
+      }
+      .vocab-card:nth-child(8) {
+        --card-index: 8;
+      }
+
+      /* Vocabulary Header */
+      .vocab-header {
+        margin-bottom: 1.5rem;
+        padding-bottom: 1.5rem;
+        border-bottom: 2px solid var(--bg-light);
+      }
+
+      .vocab-mandarin {
+        font-family: "Noto Sans SC", sans-serif;
+        font-size: 2rem;
+        font-weight: 700;
+        color: var(--primary-green);
+        margin-bottom: 0.5rem;
+        transition: color 0.3s ease;
+      }
+
+      .vocab-card:hover .vocab-mandarin {
+        color: var(--secondary-green);
+      }
+
+      .vocab-pinyin {
+        font-size: 1.1rem;
+        color: var(--accent-green);
+        font-style: italic;
+        margin-bottom: 0.5rem;
+      }
+
+      .vocab-meaning {
+        font-size: 1rem;
+        color: var(--text-light);
+        font-weight: 500;
+      }
+
+      /* Vocabulary Example */
+      .vocab-example {
+        background: linear-gradient(
+          135deg,
+          var(--bg-light) 0%,
+          rgba(168, 230, 161, 0.1) 100%
+        );
+        padding: 1.5rem;
+        border-radius: 12px;
+        transition: all 0.3s ease;
+      }
+
+      .vocab-card:hover .vocab-example {
+        background: linear-gradient(
+          135deg,
+          rgba(168, 230, 161, 0.2) 0%,
+          rgba(168, 230, 161, 0.3) 100%
+        );
+      }
+
+      .example-label {
+        font-size: 0.85rem;
+        font-weight: 600;
+        color: var(--primary-green);
+        margin-bottom: 0.8rem;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+      }
+
+      .example-mandarin {
+        font-family: "Noto Sans SC", sans-serif;
+        font-size: 1.1rem;
+        color: var(--text-dark);
+        margin-bottom: 0.5rem;
+        line-height: 1.8;
+      }
+
+      .example-pinyin {
+        font-size: 0.95rem;
+        color: var(--text-light);
+        font-style: italic;
+        margin-bottom: 0.5rem;
+      }
+
+      .example-translation {
+        font-size: 0.95rem;
+        color: var(--text-dark);
+        padding-top: 0.8rem;
+        border-top: 1px solid rgba(45, 122, 62, 0.2);
+      }
+
+      /* ===================================
+   GALLERY SECTION
+   =================================== */
+      .gallery-section {
+        padding: 5rem 2rem;
+        background: white;
+      }
+
+      .gallery-grid {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 2rem;
+        margin-top: 3rem;
+      }
+
+      .gallery-item {
+        border-radius: 20px;
+        overflow: hidden;
+        aspect-ratio: 4/3;
+        box-shadow: 0 4px 15px var(--shadow);
+        transition: all 0.4s ease;
+        animation: fadeInUp 0.6s ease-out both;
+      }
+
+      .gallery-item:hover {
+        transform: scale(1.05);
+        box-shadow: 0 15px 35px var(--shadow-hover);
+      }
+
+      .gallery-item img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        transition: transform 0.6s ease;
+      }
+
+      .gallery-item:hover img {
+        transform: scale(1.1);
+      }
+
+      .gallery-placeholder {
+        width: 100%;
+        height: 100%;
+        background: linear-gradient(
+          135deg,
+          var(--light-green) 0%,
+          var(--accent-green) 100%
+        );
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        color: white;
+      }
+
+      .gallery-placeholder-icon {
+        font-size: 4rem;
+        margin-bottom: 1rem;
+        animation: bounce 2s infinite;
+      }
+
+      .gallery-placeholder-text {
+        font-size: 1.2rem;
+        font-weight: 500;
+      }
+
+      /* ===================================
+   FOOTER
+   =================================== */
+      .footer {
+        background: linear-gradient(
+          135deg,
+          var(--dark-green) 0%,
+          var(--primary-green) 100%
+        );
+        color: white;
+        padding: 3rem 2rem;
+        text-align: center;
+      }
+
+      .footer-content h3 {
+        font-family: "Crimson Pro", serif;
+        font-size: 2rem;
+        margin-bottom: 1rem;
+        letter-spacing: 2px;
+      }
+
+      .footer-content p {
+        font-size: 1rem;
+        opacity: 0.9;
+        margin-bottom: 0.5rem;
+      }
+
+      .footer-id {
+        color: var(--light-green);
+        font-weight: 600;
+        margin-top: 1rem;
+        font-size: 1.1rem;
+      }
+
+      /* ===================================
+   RESPONSIVE DESIGN
+   =================================== */
+      @media (max-width: 768px) {
+        .vocab-grid {
+          grid-template-columns: 1fr;
+          gap: 1.5rem;
+        }
+
+        .gallery-grid {
+          grid-template-columns: 1fr;
+          gap: 1.5rem;
+        }
+
+        .category-header h3 {
+          flex-direction: column;
+          text-align: center;
+        }
+
+        .hero {
+          padding: 1rem;
+        }
+
+        .vocab-section {
+          padding: 3rem 1rem;
+        }
+
+        .gallery-section {
+          padding: 3rem 1rem;
+        }
+
+        .glow-orb {
+          display: none;
+        }
+      }
+
+      @media (max-width: 480px) {
+        .vocab-card {
+          padding: 1.5rem;
+        }
+
+        .vocab-mandarin {
+          font-size: 1.5rem;
+        }
+
+        .hero h1 {
+          font-size: 1.8rem;
+        }
+
+        .hero-mandarin {
+          font-size: 1.2rem;
+        }
+      }
+
+      /* ===================================
+   SCROLL ANIMATIONS
+   =================================== */
+      @media (prefers-reduced-motion: no-preference) {
+        .vocab-card,
+        .gallery-item,
+        .category-header {
+          opacity: 0;
+          animation: fadeInUp 0.6s ease-out forwards;
+        }
+      }
+
+      /* ===================================
+   LOADING ANIMATION
+   =================================== */
+      @keyframes shimmer {
+        0% {
+          background-position: -1000px 0;
+        }
+        100% {
+          background-position: 1000px 0;
+        }
+      }
+
+      .loading {
+        animation: shimmer 2s infinite;
+        background: linear-gradient(
+          to right,
+          var(--bg-light) 8%,
+          var(--light-green) 18%,
+          var(--bg-light) 33%
+        );
+        background-size: 1000px 100%;
+      }
+
+      /* ===================================
+   UTILITY CLASSES
+   =================================== */
+      .text-green {
+        color: var(--primary-green);
+      }
+
+      .bg-green {
+        background-color: var(--secondary-green);
+      }
+
+      .shadow-green {
+        box-shadow: 0 4px 15px var(--shadow);
+      }
+
+      /* Print Styles */
+      @media print {
+        .hero,
+        .gallery-section,
+        .scroll-indicator {
+          display: none;
+        }
+
+        .vocab-card {
+          break-inside: avoid;
+          box-shadow: none;
+          border: 1px solid #ddd;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <!-- Hero Section -->
+    <section class="hero">
+      <!-- Glowing Orbs -->
+      <div class="glow-orb"></div>
+      <div class="glow-orb"></div>
+      <div class="glow-orb"></div>
+
+      <!-- Floating Particles -->
+      <div class="hero-particles">
+        <div class="particle"></div>
+        <div class="particle"></div>
+        <div class="particle"></div>
+        <div class="particle"></div>
+        <div class="particle"></div>
+        <div class="particle"></div>
+      </div>
+
+      <div class="hero-content">
+        <div class="hero-badge">
+          Kamus Lapangan Magang — Purchasing, PR, R&D & Mesin
+        </div>
+        <h1>REYHAN EKAPRANA TARIGAN</h1>
+        <div class="hero-mandarin">实习手册：采购、公关、研发与设备词典</div>
+        <div class="hero-info">Jurusan Mandarin • Angkatan 2023</div>
+        <p
+          class="footer-id"
+          style="color: var(--light-green); margin-top: 1rem"
+        >
+          23020774111
+        </p>
+      </div>
+      <div class="scroll-indicator"></div>
+    </section>
+
+    <!-- Vocabulary Section -->
+    <section class="vocab-section">
+      <div class="container">
+        <div class="section-header">
+          <h2 class="section-title">Kamus Kosakata</h2>
+        </div>
+
+        <!-- Pengadaan (Procurement) -->
+        <div class="category-header">
+          <h3>
+            <span class="category-icon">📦</span>
+            Pengadaan & Pembelian (采购)
+          </h3>
+        </div>
+        <div class="vocab-grid">
+          <div class="vocab-card">
+            <div class="vocab-header">
+              <div class="vocab-mandarin">采购</div>
+              <div class="vocab-pinyin">cǎigòu</div>
+              <div class="vocab-meaning">pembelian / procurement</div>
+            </div>
+            <div class="vocab-example">
+              <div class="example-label">示例 (Contoh):</div>
+              <div class="example-mandarin">我们需要尽快完成这次采购。</div>
+              <div class="example-pinyin">
+                Wǒmen xūyào jǐnkuài wánchéng zhè cì cǎigòu.
+              </div>
+              <div class="example-translation">
+                Kita perlu segera menyelesaikan pembelian ini.
+              </div>
+            </div>
+          </div>
+
+          <div class="vocab-card">
+            <div class="vocab-header">
+              <div class="vocab-mandarin">供应商</div>
+              <div class="vocab-pinyin">gōngyìngshāng</div>
+              <div class="vocab-meaning">pemasok / supplier</div>
+            </div>
+            <div class="vocab-example">
+              <div class="example-label">示例 (Contoh):</div>
+              <div class="example-mandarin">请把新供应商的资料发给我。</div>
+              <div class="example-pinyin">
+                Qǐng bǎ xīn gōngyìngshāng de zīliào fā gěi wǒ.
+              </div>
+              <div class="example-translation">
+                Tolong kirimkan data pemasok baru kepada saya.
+              </div>
+            </div>
+          </div>
+
+          <div class="vocab-card">
+            <div class="vocab-header">
+              <div class="vocab-mandarin">合同</div>
+              <div class="vocab-pinyin">hétong</div>
+              <div class="vocab-meaning">kontrak / agreement</div>
+            </div>
+            <div class="vocab-example">
+              <div class="example-label">示例 (Contoh):</div>
+              <div class="example-mandarin">合同已经由法务部门审核通过。</div>
+              <div class="example-pinyin">
+                Hétong yǐjīng yóu fǎwù bùmén shěnhé tōngguò.
+              </div>
+              <div class="example-translation">
+                Kontrak sudah disetujui oleh bagian hukum.
+              </div>
+            </div>
+          </div>
+
+          <div class="vocab-card">
+            <div class="vocab-header">
+              <div class="vocab-mandarin">报价</div>
+              <div class="vocab-pinyin">bàojià</div>
+              <div class="vocab-meaning">penawaran harga / quotation</div>
+            </div>
+            <div class="vocab-example">
+              <div class="example-label">示例 (Contoh):</div>
+              <div class="example-mandarin">请在周五之前给我们正式报价。</div>
+              <div class="example-pinyin">
+                Qǐng zài zhōu wǔ zhīqián gěi wǒmen zhèngshì bàojià.
+              </div>
+              <div class="example-translation">
+                Tolong kirimkan penawaran harga resmi sebelum Jumat.
+              </div>
+            </div>
+          </div>
+
+          <div class="vocab-card">
+            <div class="vocab-header">
+              <div class="vocab-mandarin">订单</div>
+              <div class="vocab-pinyin">dìngdān</div>
+              <div class="vocab-meaning">pesanan / order</div>
+            </div>
+            <div class="vocab-example">
+              <div class="example-label">示例 (Contoh):</div>
+              <div class="example-mandarin">这个订单预计下个月发货。</div>
+              <div class="example-pinyin">
+                Zhège dìngdān yùjì xià gè yuè fāhuò.
+              </div>
+              <div class="example-translation">
+                Pesanan ini direncanakan dikirim bulan depan.
+              </div>
+            </div>
+          </div>
+
+          <div class="vocab-card">
+            <div class="vocab-header">
+              <div class="vocab-mandarin">交货</div>
+              <div class="vocab-pinyin">jiāohuò</div>
+              <div class="vocab-meaning">pengiriman barang / delivery</div>
+            </div>
+            <div class="vocab-example">
+              <div class="example-label">示例 (Contoh):</div>
+              <div class="example-mandarin">交货日期可以再商量吗？</div>
+              <div class="example-pinyin">
+                Jiāohuò rìqī kěyǐ zài shāngliáng ma?
+              </div>
+              <div class="example-translation">
+                Tanggal pengiriman bisa dinegosiasikan lagi?
+              </div>
+            </div>
+          </div>
+
+          <div class="vocab-card">
+            <div class="vocab-header">
+              <div class="vocab-mandarin">交货期</div>
+              <div class="vocab-pinyin">jiāohuòqī</div>
+              <div class="vocab-meaning">waktu pengiriman / lead time</div>
+            </div>
+            <div class="vocab-example">
+              <div class="example-label">示例 (Contoh):</div>
+              <div class="example-mandarin">供应商的交货期是四周。</div>
+              <div class="example-pinyin">
+                Gōngyìngshāng de jiāohuòqī shì sì zhōu.
+              </div>
+              <div class="example-translation">
+                Lead time pemasok adalah empat minggu.
+              </div>
+            </div>
+          </div>
+
+          <div class="vocab-card">
+            <div class="vocab-header">
+              <div class="vocab-mandarin">采购订单</div>
+              <div class="vocab-pinyin">cǎigòu dìngdān</div>
+              <div class="vocab-meaning">purchase order (PO)</div>
+            </div>
+            <div class="vocab-example">
+              <div class="example-label">示例 (Contoh):</div>
+              <div class="example-mandarin">请确认采购订单上的数量。</div>
+              <div class="example-pinyin">
+                Qǐng quèrèn cǎigòu dìngdān shàng de shùliàng.
+              </div>
+              <div class="example-translation">
+                Tolong konfirmasi jumlah pada purchase order.
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Note: Sisanya sama dengan HTML yang Anda berikan -->
+        <p
+          style="
+            text-align: center;
+            color: var(--text-light);
+            padding: 3rem 0;
+            font-size: 1.1rem;
+          "
+        >
+          📚 Website ini berisi kamus lengkap kosakata magang dengan semua
+          kategori:<br />
+          Perdagangan Internasional • Hubungan Masyarakat • Peralatan Deteksi &
+          Inspeksi<br />
+          Peralatan Produksi • Testing & R&D<br /><br />
+          <strong style="color: var(--primary-green)"
+            >Silakan copy semua konten vocab cards dari HTML asli Anda ke
+            sini!</strong
+          >
+        </p>
+      </div>
+    </section>
+
+    <!-- Gallery Section -->
+    <section class="gallery-section">
+      <div class="container">
+        <div class="section-header">
+          <h2 class="section-title">Galeri Pengalaman</h2>
+        </div>
+        <div class="gallery-grid">
+          <div class="gallery-item">
+            <img
+              src="public/gambar1.jpeg"
+              alt="Pengalaman Magang 1"
+              onerror="this.parentElement.innerHTML='<div class=\'gallery-placeholder\'><div class=\'gallery-placeholder-icon\'>📸</div><div class=\'gallery-placeholder-text\'>Foto Pengalaman 1</div></div>'"
+            />
+          </div>
+          <div class="gallery-item">
+            <img
+              src="public/gambar2.jpeg"
+              alt="Pengalaman Magang 2"
+              onerror="this.parentElement.innerHTML='<div class=\'gallery-placeholder\'><div class=\'gallery-placeholder-icon\'>📸</div><div class=\'gallery-placeholder-text\'>Foto Pengalaman 2</div></div>'"
+            />
+          </div>
+          <div class="gallery-item">
+            <img
+              src="public/gambar3.jpeg"
+              alt="Pengalaman Magang 3"
+              onerror="this.parentElement.innerHTML='<div class=\'gallery-placeholder\'><div class=\'gallery-placeholder-icon\'>📸</div><div class=\'gallery-placeholder-text\'>Foto Pengalaman 3</div></div>'"
+            />
+          </div>
+          <div class="gallery-item">
+            <img
+              src="public/gambar5.jpeg"
+              alt="Pengalaman Magang 4"
+              onerror="this.parentElement.innerHTML='<div class=\'gallery-placeholder\'><div class=\'gallery-placeholder-icon\'>📸</div><div class=\'gallery-placeholder-text\'>Foto Pengalaman 4</div></div>'"
+            />
+          </div>
+          <div class="gallery-item">
+            <img
+              src="public/gambar4.jpeg"
+              alt="Pengalaman Magang 5"
+              onerror="this.parentElement.innerHTML='<div class=\'gallery-placeholder\'><div class=\'gallery-placeholder-icon\'>📸</div><div class=\'gallery-placeholder-text\'>Foto Pengalaman 5</div></div>'"
+            />
+          </div>
+          <div class="gallery-item">
+            <img
+              src="public/gambar32.jpeg"
+              alt="Pengalaman Magang 6"
+              onerror="this.parentElement.innerHTML='<div class=\'gallery-placeholder\'><div class=\'gallery-placeholder-icon\'>📸</div><div class=\'gallery-placeholder-text\'>Foto Pengalaman 6</div></div>'"
+            />
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+      <div class="footer-content">
+        <h3>REYHAN EKAPRANA TARIGAN</h3>
+        <p>Jurusan Bahasa & Sastra Mandarin</p>
+        <p>Angkatan 2023</p>
+        <p class="footer-id">NIM: 23020774111</p>
+      </div>
+    </footer>
+  </body>
+</html>
